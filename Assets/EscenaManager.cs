@@ -29,12 +29,17 @@ public class EscenaManager : MonoBehaviour
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 
-    public void irBosque(){
-        SceneManager.LoadScene("Bosque", LoadSceneMode.Single); 
+    public void escenaFinal(){
+        SceneManager.LoadScene("Final", LoadSceneMode.Single); 
     }
 
     public void nivelBoss(){
-        SceneManager.LoadScene("Final", LoadSceneMode.Single);
+        SceneManager.LoadScene("Boss", LoadSceneMode.Single);
+    }
+
+    public void irPueblo ()
+    {
+        SceneManager.LoadScene("Pueblo", LoadSceneMode.Single);
     }
 
     public void salirJuego(){
