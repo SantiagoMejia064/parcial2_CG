@@ -14,17 +14,19 @@ public class Movimiento : MonoBehaviour
     [Header("Salto")]
     public float speedSalto = 8f;
     public Transform checkPiso;
+    public LayerMask layerPiso;
+    public int contJ;
+    public bool canJump;
 
 
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        horizontal = Input.GetAxisRaw("Horizontal");
+        /*
+        if(horizontal > 0 || horiontal <= 0)
+        {
+
+        }
+        */
     }
 }
