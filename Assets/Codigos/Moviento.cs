@@ -23,7 +23,7 @@ public class Movimiento : MonoBehaviour
     
     public bool isCrouching = false;
 
-    //[Header("Animación")]
+    //[Header("Animaciï¿½n")]
     //public Animator anim;
 
     // private Vector2 startPoint;
@@ -104,11 +104,11 @@ public class Movimiento : MonoBehaviour
                 //caminar.Stop();
             }
 
-            // Agacharse (activamos la animación de agachado sin importar si está en el aire o en el suelo)
+            // Agacharse (activamos la animaciï¿½n de agachado sin importar si estï¿½ en el aire o en el suelo)
             if (Input.GetButton("Agacharse"))
             {
                 isCrouching = true;
-                //anim.SetBool("isCrouching", isCrouching); // Activar la animación de agacharse
+                //anim.SetBool("isCrouching", isCrouching); // Activar la animaciï¿½n de agacharse
             }
             else
             {
@@ -130,17 +130,17 @@ public class Movimiento : MonoBehaviour
     }
 
     
-    // Para simulaciones físicas es recomendable el FixedUpdate
+    // Para simulaciones fï¿½sicas es recomendable el FixedUpdate
     private void FixedUpdate()
     {
-        // Bloquear el movimiento horizontal solo si está en el suelo y agachado
+        // Bloquear el movimiento horizontal solo si estï¿½ en el suelo y agachado
         if (!isCrouching || !isGrounded())
         {
             rb.velocity = new Vector2(horizontal * velocidad, rb.velocity.y); // Permitir movimiento
         }
         else if (isCrouching && isGrounded())
         {
-            rb.velocity = new Vector2(0, rb.velocity.y); // Bloquear movimiento en el suelo mientras está agachado
+            rb.velocity = new Vector2(0, rb.velocity.y); // Bloquear movimiento en el suelo mientras estï¿½ agachado
         }
     }
     
