@@ -23,8 +23,8 @@ public class Movimiento : MonoBehaviour
     
     public bool isCrouching = false;
 
-    //[Header("Animación")]
-    //public Animator anim;
+    [Header("Animación")]
+    public Animator anim;
 
     // private Vector2 startPoint;
 
@@ -37,7 +37,7 @@ public class Movimiento : MonoBehaviour
 
     private void Awake()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -45,7 +45,7 @@ public class Movimiento : MonoBehaviour
         if (attack == false)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
-            //anim.SetFloat("Jumping", 1);
+            anim.SetFloat("Jumping", 1);
 
             // Saltar
             if (Input.GetButtonDown("Jump") && isGrounded())
@@ -57,7 +57,7 @@ public class Movimiento : MonoBehaviour
                     canJump = false;
                 }
                 contJ++;
-                //anim.SetFloat("Jumping", 1);
+                anim.SetFloat("Jumping", 1);
                 //salto.Play();
 
                 Debug.Log(contJ);
@@ -72,7 +72,7 @@ public class Movimiento : MonoBehaviour
                     canJump = false;
                 }
                 contJ++;
-                //anim.SetFloat("Jumping", 1);
+                anim.SetFloat("Jumping", 1);
                 //salto.Play();
 
                 Debug.Log(contJ);
@@ -82,7 +82,7 @@ public class Movimiento : MonoBehaviour
             {
                 contJ = 0;
                 canJump = true;
-                //anim.SetFloat("Jumping", 0);
+                anim.SetFloat("Jumping", 0);
             }
 
             // Caminar
@@ -108,12 +108,12 @@ public class Movimiento : MonoBehaviour
             if (Input.GetButton("Agacharse"))
             {
                 isCrouching = true;
-                //anim.SetBool("isCrouching", isCrouching); // Activar la animación de agacharse
+                anim.SetBool("isCrouching", isCrouching); // Activar la animación de agacharse
             }
             else
             {
                 isCrouching = false;
-                //anim.SetBool("isCrouching", isCrouching);
+                anim.SetBool("isCrouching", isCrouching);
             }
 
             voltear();
