@@ -23,17 +23,17 @@ public class Movimiento : MonoBehaviour
     
     public bool isCrouching = false;
 
-    [Header("Animación")]
+    //[Header("Animación")]
     //public Animator anim;
 
     // private Vector2 startPoint;
 
-    public AudioSource salto;
-    public AudioSource caminar;
+    //public AudioSource salto;
+    //public AudioSource caminar;
 
-    private Vector2 startPoint;
+    //private Vector2 startPoint;
 
-    public AudioSource moneda;
+    //public AudioSource moneda;
 
     private void Awake()
     {
