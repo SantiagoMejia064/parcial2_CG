@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movimiento : MonoBehaviour
+public class MovimientoPlataforma : MonoBehaviour
 {
     [SerializeField]
     public Rigidbody2D rb;
@@ -130,18 +130,13 @@ public class Movimiento : MonoBehaviour
     }
 
     
-    // Para simulaciones f�sicas es recomendable el FixedUpdate
+    // Para simulaciones fisicas es recomendable el FixedUpdate
     private void FixedUpdate()
     {
-        // Bloquear el movimiento horizontal solo si est� en el suelo y agachado
-        if (!isCrouching || !isGrounded())
-        {
-            rb.velocity = new Vector2(horizontal * velocidad, rb.velocity.y); // Permitir movimiento
-        }
-        else if (isCrouching && isGrounded())
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y); // Bloquear movimiento en el suelo mientras est� agachado
-        }
+        rb.velocity = new Vector2(horizontal*velocidad, rb.velocity.y);
+        
+        //rb.AddForce(Vector2.right * horizontal * velocidad, ForceMode2D.Force);
+        
     }
     
 

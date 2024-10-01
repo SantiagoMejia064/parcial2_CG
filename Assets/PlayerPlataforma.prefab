@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 3792625917963498796}
   - component: {fileID: 5326030127809743068}
   - component: {fileID: 7192229229355104544}
-  - component: {fileID: 4714078582090793895}
+  - component: {fileID: -2543011223368365369}
   m_Layer: 7
-  m_Name: Player
+  m_Name: PlayerPlataforma
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07662852, y: 0.2684434}
   m_EdgeRadius: 0
---- !u!114 &4714078582090793895
+--- !u!114 &-2543011223368365369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,7 +211,7 @@ MonoBehaviour:
   checkPiso: {fileID: 7420802555867732568}
   layerPiso:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   contJ: 0
   canJump: 0
   isCrouching: 0
