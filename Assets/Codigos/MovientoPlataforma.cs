@@ -23,8 +23,8 @@ public class MovimientoPlataforma : MonoBehaviour
     
     public bool isCrouching = false;
 
-    //[Header("Animaci�n")]
-    //public Animator anim;
+    [Header("Animaci�n")]
+    public Animator anim;
 
     // private Vector2 startPoint;
 
@@ -37,7 +37,7 @@ public class MovimientoPlataforma : MonoBehaviour
 
     private void Awake()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -45,7 +45,7 @@ public class MovimientoPlataforma : MonoBehaviour
         if (attack == false)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
-            //anim.SetFloat("Jumping", 1);
+            anim.SetFloat("Jumping", 1);
 
             // Saltar
             if (Input.GetButtonDown("Jump") && isGrounded())
@@ -57,7 +57,7 @@ public class MovimientoPlataforma : MonoBehaviour
                     canJump = false;
                 }
                 contJ++;
-                //anim.SetFloat("Jumping", 1);
+                anim.SetFloat("Jumping", 1);
                 //salto.Play();
 
                 Debug.Log(contJ);
@@ -72,7 +72,7 @@ public class MovimientoPlataforma : MonoBehaviour
                     canJump = false;
                 }
                 contJ++;
-                //anim.SetFloat("Jumping", 1);
+                anim.SetFloat("Jumping", 1);
                 //salto.Play();
 
                 Debug.Log(contJ);
@@ -82,17 +82,17 @@ public class MovimientoPlataforma : MonoBehaviour
             {
                 contJ = 0;
                 canJump = true;
-                //anim.SetFloat("Jumping", 0);
+                anim.SetFloat("Jumping", 0);
             }
 
             // Caminar
             if (horizontal > 0 || horizontal <= 0)
             {
-                //anim.SetFloat("Walk", Mathf.Abs(horizontal));
+                anim.SetFloat("Walk", Mathf.Abs(horizontal));
             }
             else
             {
-                //anim.SetFloat("Walk", 0);
+                anim.SetFloat("Walk", 0);
             }
 
             if (Input.GetButtonDown("Horizontal") && isGrounded())
@@ -102,18 +102,6 @@ public class MovimientoPlataforma : MonoBehaviour
             else
             {
                 //caminar.Stop();
-            }
-
-            // Agacharse (activamos la animaci�n de agachado sin importar si est� en el aire o en el suelo)
-            if (Input.GetButton("Agacharse"))
-            {
-                isCrouching = true;
-                //anim.SetBool("isCrouching", isCrouching); // Activar la animaci�n de agacharse
-            }
-            else
-            {
-                isCrouching = false;
-                //anim.SetBool("isCrouching", isCrouching);
             }
 
             voltear();
