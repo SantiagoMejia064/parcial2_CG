@@ -10,11 +10,18 @@ public class CombateManager : MonoBehaviour
     public GameObject personaje2;
     public GameObject personaje3;
     public GameObject personaje4;
+    public GameObject P1Attack1;
+    public GameObject P1Attack2;
+    public GameObject P2Attack1;
+    public GameObject P2Attack2;
+    public GameObject P2Attack3;
+    public GameObject P3Attack1;
+    public GameObject P4Attack1;
 
-    // Referencia al panel de selección de personajes
+    // Referencia al panel de selecciï¿½n de personajes
     public GameObject panelSeleccionPersonajes;
 
-    // Método que selecciona el personaje basado en el índice (del botón presionado)
+    // Mï¿½todo que selecciona el personaje basado en el ï¿½ndice (del botï¿½n presionado)
     public void SeleccionarPersonaje(int indice)
     {
         // Desactivar todos los personajes primero
@@ -22,28 +29,42 @@ public class CombateManager : MonoBehaviour
         personaje2.SetActive(false);
         personaje3.SetActive(false);
         personaje4.SetActive(false);
+        P1Attack1.SetActive(false);
+        P1Attack2.SetActive(false);
+        P2Attack1.SetActive(false);
+        P2Attack2.SetActive(false);
+        P2Attack3.SetActive(false);
+        P3Attack1.SetActive(false);
+        P4Attack1.SetActive(false);
 
         // Activar el personaje seleccionado
         switch (indice)
         {
             case 1:
                 personaje1.SetActive(true);
+                P1Attack1.SetActive(true);
+                P1Attack2.SetActive(true);
                 break;
             case 2:
                 personaje2.SetActive(true);
+                P2Attack1.SetActive(true);
+                P2Attack2.SetActive(true);
+                P2Attack3.SetActive(true);
                 break;
             case 3:
                 personaje3.SetActive(true);
+                P3Attack1.SetActive(true);
                 break;
             case 4:
                 personaje4.SetActive(true);
+                P4Attack1.SetActive(true);
                 break;
             default:
-                Debug.LogWarning("Índice de personaje inválido");
+                Debug.LogWarning("indice de personaje invalido");
                 break;
         }
 
-        // Desactivar el panel de selección después de elegir un personaje
+        // Desactivar el panel de selecciï¿½n despuï¿½s de elegir un personaje
         panelSeleccionPersonajes.SetActive(false);
     }
 }

@@ -255,6 +255,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15067704}
   m_CullTransparentMesh: 1
+--- !u!1 &16763637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 16763639}
+  - component: {fileID: 16763638}
+  m_Layer: 0
+  m_Name: CombateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &16763638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16763637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c666a6794c797b241b99cb0ffb3a39fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personaje1: {fileID: 1836113166}
+  personaje2: {fileID: 1334219635}
+  personaje3: {fileID: 1247100465}
+  personaje4: {fileID: 479453674}
+  P1Attack1: {fileID: 15067704}
+  P1Attack2: {fileID: 563396288}
+  P2Attack1: {fileID: 965118047}
+  P2Attack2: {fileID: 2141646256}
+  P2Attack3: {fileID: 873331297}
+  P3Attack1: {fileID: 1314377439}
+  P4Attack1: {fileID: 1459017288}
+  panelSeleccionPersonajes: {fileID: 1018099200}
+--- !u!4 &16763639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16763637}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.61288774, y: -0.18262176, z: -0.217413}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &133065218
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,17 +951,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647081482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5769207, y: 2.5769207, z: 2.5769207}
+  m_LocalScale: {x: 1.5617702, y: 2.5769207, z: 2.5769207}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1712344589}
-  m_Father: {fileID: 1919687822}
+  m_Father: {fileID: 1018099201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -624, y: -94}
+  m_AnchoredPosition: {x: -377.57568, y: -93}
   m_SizeDelta: {x: 135.75, y: 153.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647081484
@@ -952,14 +1008,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 16763638}
+        m_TargetAssemblyTypeName: CombateManager, Assembly-CSharp
+        m_MethodName: SeleccionarPersonaje
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1028,17 +1084,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871261673}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5769207, y: 2.5769207, z: 2.5769207}
+  m_LocalScale: {x: 1.5617702, y: 2.5769207, z: 2.5769207}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1042798083}
-  m_Father: {fileID: 1919687822}
+  m_Father: {fileID: 1018099201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 217, y: -94.00002}
+  m_AnchoredPosition: {x: 132.12125, y: -93.00002}
   m_SizeDelta: {x: 135.75, y: 153.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871261675
@@ -1085,14 +1141,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 16763638}
+        m_TargetAssemblyTypeName: CombateManager, Assembly-CSharp
+        m_MethodName: SeleccionarPersonaje
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1511,6 +1567,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1754637857}
+  - {fileID: 647081483}
+  - {fileID: 1720128281}
+  - {fileID: 871261674}
+  - {fileID: 1100993014}
   m_Father: {fileID: 1919687822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1661,17 +1721,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100993013}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5769207, y: 2.5769207, z: 2.5769207}
+  m_LocalScale: {x: 1.5617702, y: 2.5769207, z: 2.5769207}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 152856076}
-  m_Father: {fileID: 1919687822}
+  m_Father: {fileID: 1018099201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 627, y: -94.00002}
+  m_AnchoredPosition: {x: 380.6062, y: -93.00002}
   m_SizeDelta: {x: 135.75, y: 153.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100993015
@@ -1718,14 +1778,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 16763638}
+        m_TargetAssemblyTypeName: CombateManager, Assembly-CSharp
+        m_MethodName: SeleccionarPersonaje
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2827,17 +2887,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720128280}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5769207, y: 2.5769207, z: 2.5769207}
+  m_LocalScale: {x: 1.5617702, y: 2.5769207, z: 2.5769207}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1504211362}
-  m_Father: {fileID: 1919687822}
+  m_Father: {fileID: 1018099201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -196, y: -94.00002}
+  m_AnchoredPosition: {x: -118.18178, y: -93.00002}
   m_SizeDelta: {x: 135.75, y: 153.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1720128282
@@ -2884,14 +2944,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 16763638}
+        m_TargetAssemblyTypeName: CombateManager, Assembly-CSharp
+        m_MethodName: SeleccionarPersonaje
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3029,7 +3089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1836113167
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3192,10 +3252,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1018099201}
-  - {fileID: 647081483}
-  - {fileID: 1720128281}
-  - {fileID: 871261674}
-  - {fileID: 1100993014}
   - {fileID: 15067705}
   - {fileID: 563396289}
   - {fileID: 965118048}
@@ -3356,3 +3412,4 @@ SceneRoots:
   - {fileID: 1334219637}
   - {fileID: 1247100467}
   - {fileID: 479453676}
+  - {fileID: 16763639}
