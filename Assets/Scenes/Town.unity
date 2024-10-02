@@ -163,6 +163,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3792625917963498796, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma
@@ -17492,7 +17496,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: a46524450ef82a045beb7ff47d0c5045, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
