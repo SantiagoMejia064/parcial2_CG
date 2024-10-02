@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class Enemigo1 : MonoBehaviour
 {
+    public void atacar(){
+        CombateManager combateManager = GameObject.Find("CombateManager").GetComponent<CombateManager>();
+        Debug.Log("Atacando");
+        combateManager.playerAttacking = true;
+        combateManager.enemyAttacking = false;
+    }
 
-    
 
 }

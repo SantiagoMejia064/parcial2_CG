@@ -17,8 +17,8 @@ public class CombateManager : MonoBehaviour
     public GameObject P2Attack3;
     public GameObject P3Attack1;
     public GameObject P4Attack1;
-    public bool playerAttacking = true;
-    public bool enemyAttacking = false;
+    public bool playerAttacking;
+    public bool enemyAttacking;
 
     // Referencia al panel de selecci�n de personajes
     public GameObject panelSeleccionPersonajes;
@@ -68,5 +68,20 @@ public class CombateManager : MonoBehaviour
 
         // Desactivar el panel de selecci�n despu�s de elegir un personaje
         panelSeleccionPersonajes.SetActive(false);
+    }
+
+    public void eleccionAtaque(){
+        if(playerAttacking){
+            Debug.Log("Ataque del jugador");
+            P1Attack1.SetActive(false);
+            P1Attack2.SetActive(false);
+            P2Attack1.SetActive(false);
+            P2Attack2.SetActive(false);
+            P2Attack3.SetActive(false);
+            P3Attack1.SetActive(false);
+            P4Attack1.SetActive(false);
+        }else if(enemyAttacking){
+            Debug.Log("Ataque del enemigo");
+        }
     }
 }

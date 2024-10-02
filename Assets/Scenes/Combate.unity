@@ -295,6 +295,8 @@ MonoBehaviour:
   P2Attack3: {fileID: 873331297}
   P3Attack1: {fileID: 1314377439}
   P4Attack1: {fileID: 1459017288}
+  playerAttacking: 0
+  enemyAttacking: 0
   panelSeleccionPersonajes: {fileID: 1018099200}
 --- !u!4 &16763639
 Transform:
@@ -2755,6 +2757,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  combate: {fileID: 16763638}
+  escenaManager: {fileID: 0}
   salud: 0
   fuerza: 0
   resistencia: 0
