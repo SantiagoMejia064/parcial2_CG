@@ -45,7 +45,7 @@ public class MovimientoPlataforma : MonoBehaviour
         if (attack == false)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
-            anim.SetFloat("Jumping", 1);
+           
 
             // Saltar
             if (Input.GetButtonDown("Jump") && isGrounded())
@@ -86,7 +86,7 @@ public class MovimientoPlataforma : MonoBehaviour
             }
 
             // Caminar
-            if (horizontal > 0 || horizontal <= 0)
+            if (horizontal > 0 || horizontal < 0)
             {
                 anim.SetFloat("Walk", Mathf.Abs(horizontal));
             }
