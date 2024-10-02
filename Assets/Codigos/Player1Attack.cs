@@ -9,6 +9,7 @@ public class Player1Attack : MonoBehaviour
     //public static PlayerManager Instance { get; private set; }
 
     public GameObject Player;
+    public CombateManager combate;
 
     [Header("Estadisticas")]
     public int salud;
@@ -70,6 +71,8 @@ public class Player1Attack : MonoBehaviour
             {
 
                 int danoRealizado = fuerza;
+                combate.playerAttacking = false;
+                combate.enemyAttacking = true;
 
                 Debug.Log("Ataque de personaje 1 exitoso, daño realizado: " + danoRealizado);
             }

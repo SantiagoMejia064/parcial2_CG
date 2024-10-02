@@ -6,5 +6,6 @@ using UnityEngine.UI;
 public class Enemigo1 : MonoBehaviour
 {
 
+    
 
 }

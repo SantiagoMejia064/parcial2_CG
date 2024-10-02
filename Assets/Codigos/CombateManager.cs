@@ -17,6 +17,8 @@ public class CombateManager : MonoBehaviour
     public GameObject P2Attack3;
     public GameObject P3Attack1;
     public GameObject P4Attack1;
+    public bool playerAttacking = true;
+    public bool enemyAttacking = false;
 
     // Referencia al panel de selecci�n de personajes
     public GameObject panelSeleccionPersonajes;
