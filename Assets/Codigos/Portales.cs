@@ -18,15 +18,4 @@ public class Portales : MonoBehaviour
             }
         }
     }
-/*
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-    */
 }

@@ -17586,6 +17586,8 @@ MonoBehaviour:
   - "\u201CEsa chica es muy extra\xF1a, tiene ojos de \xE1ngel y pelo de diablo. "
   - "No puede ser mas que una bruja, y dicen aqu\xED en el pueblo que ya ha ocasionado
     varios problemas\u201D"
+  - "Disculpe mi querido forastero, me podr\xEDas leer lo que esta escrito en tu
+    empu\xF1adura? \u2026 creo reconocer un fragmento de ello"
   boton: {fileID: 1525238365}
   velocidadTexto: 0.06
   distanciaJugador: 0

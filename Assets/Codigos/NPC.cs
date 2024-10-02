@@ -49,7 +49,7 @@ public class NPC : MonoBehaviour
     public void ceroTexto()
     {
         textoDialogo.text = "";
-        index = 0;;
+        index = 0;
         panelDialogo.SetActive(false);
     }
 
@@ -65,8 +65,9 @@ public class NPC : MonoBehaviour
 
     public void sigLinea()
     {
-
-        boton.SetActive(false);
+        if(index == dialogo.Length - 1){
+            boton.SetActive(false);
+        }
         if(index < dialogo.Length - 1)
         {
             index++;
