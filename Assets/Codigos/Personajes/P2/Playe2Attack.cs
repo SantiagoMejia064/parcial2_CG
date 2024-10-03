@@ -48,22 +48,22 @@ public class Player2Attack : MonoBehaviour
 
             int valorAtaque = int.Parse(tirada1.ToString() + tirada2.ToString());
 
-            Debug.Log("Tirada de ataque de personaje 1: " + tirada1 + "+" + tirada2 + " = " + valorAtaque);
+            Debug.Log("Tirada de ataque de personaje 2: " + tirada1 + "+" + tirada2 + " = " + valorAtaque);
 
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
-                Debug.Log("Pifia en el ataque de personaje 1, no se hace daño.");
+                Debug.Log("Pifia en el ataque de personaje 2, no se hace daño.");
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
             {
                 int danoRealizado = fuerza;
-                Debug.Log("Ataque de personaje 1 exitoso, daño realizado: " + danoRealizado);
+                Debug.Log("Ataque de personaje 2 exitoso, daño realizado: " + danoRealizado);
                 return true;
             }
             else
             {
-                Debug.Log("El ataque de personaje 1 no es exitoso, no supera la fuerza del personaje.");
+                Debug.Log("El ataque de personaje 2 no es exitoso, no supera la fuerza del personaje.");
                 return false;
             }
         }
@@ -76,7 +76,7 @@ public class Player2Attack : MonoBehaviour
             int d10 = Random.Range(0, 10);
 
             int valorAtaque = d10;
-            Debug.Log("Tirada de ataque de personaje 1: " + d10 + " = " + valorAtaque);
+            Debug.Log("Tirada de ataque de personaje 2: " + d10 + " = " + valorAtaque);
 
             //Enemigo1.getDamage(valorAtaque);
 
@@ -94,7 +94,7 @@ public class Player2Attack : MonoBehaviour
             int d4 = Random.Range(0, 4);
 
             int valorAtaque = d10 + d4;
-            Debug.Log("Tirada de ataque de personaje 1: " + d10 + "+" + d4 + " = " + valorAtaque);
+            Debug.Log("Tirada de ataque de personaje 2: " + d10 + "+" + d4 + " = " + valorAtaque);
 
             //Enemigo1.getDamage(valorAtaque);
 
@@ -113,7 +113,7 @@ public class Player2Attack : MonoBehaviour
 
 
             int valorAtaque = d10 + d4 + D4;
-            Debug.Log("Tirada de ataque de personaje 1: " + d10 + "+" +d4 + "+" + D4 + "=" + valorAtaque);
+            Debug.Log("Tirada de ataque de personaje 2: " + d10 + "+" +d4 + "+" + D4 + "=" + valorAtaque);
 
             //Enemigo1.getDamage(valorAtaque);
 

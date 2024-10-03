@@ -32,22 +32,22 @@ public class Player3Attack : MonoBehaviour
 
             int valorAtaque = int.Parse(tirada1.ToString() + tirada2.ToString());
 
-            Debug.Log("Tirada de ataque de personaje 1: " + tirada1 + "+" + tirada2 + " = " + valorAtaque);
+            Debug.Log("Tirada de ataque de personaje 3: " + tirada1 + "+" + tirada2 + " = " + valorAtaque);
 
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
-                Debug.Log("Pifia en el ataque de personaje 1, no se hace daño.");
+                Debug.Log("Pifia en el ataque de personaje 3, no se hace daño.");
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
             {
                 int danoRealizado = fuerza;
-                Debug.Log("Ataque de personaje 1 exitoso, daño realizado: " + danoRealizado);
+                Debug.Log("Ataque de personaje 3 exitoso, daño realizado: " + danoRealizado);
                 return true;
             }
             else
             {
-                Debug.Log("El ataque de personaje 1 no es exitoso, no supera la fuerza del personaje.");
+                Debug.Log("El ataque de personaje 3 no es exitoso, no supera la fuerza del personaje.");
                 return false;
             }
         }
@@ -61,7 +61,7 @@ public class Player3Attack : MonoBehaviour
             int d6 = Random.Range(0, 6);
 
             int valorAtaque = d10 + d6;
-            Debug.Log("Tirada de ataque de personaje 1: " + d10 + "+" + d6 + " = " + valorAtaque);
+            Debug.Log("Tirada de ataque de personaje 3: " + d10 + "+" + d6 + " = " + valorAtaque);
 
             //Enemigo1.getDamage(valorAtaque);
 

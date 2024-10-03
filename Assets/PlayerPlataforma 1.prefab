@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7192229229355104544}
   - component: {fileID: -2543011223368365369}
   - component: {fileID: 6819351715326525800}
+  - component: {fileID: 1049620758259136767}
   m_Layer: 7
   m_Name: PlayerPlataforma 1
   m_TagString: Player
@@ -238,3 +239,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1049620758259136767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168817509697974596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32443f5cb2133b44e826d24c6513f3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 7168817509697974596}
+  combate: {fileID: 0}
+  salud: 100
+  fuerza: 23
+  resistencia: 47

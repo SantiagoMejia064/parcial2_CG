@@ -251,9 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd1356819ac9e94ea20193bb9de8dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 7168817509697974596}
   combate: {fileID: 0}
-  escenaManager: {fileID: 0}
   salud: 100
   fuerza: 17
   resistencia: 38
