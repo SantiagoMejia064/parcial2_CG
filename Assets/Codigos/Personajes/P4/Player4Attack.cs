@@ -41,7 +41,7 @@ public class Player4Attack : MonoBehaviour
             else if (valorAtaque < 70 && valorAtaque > fuerza)
             {
                 int danoRealizado = fuerza;
-                Debug.Log("Ataque de personaje 4 exitoso, daño realizado: " + danoRealizado);
+                Debug.Log("Ataque de personaje 4 exitoso, supera la fuerza del Personaje");
                 return true;
             }
             else
