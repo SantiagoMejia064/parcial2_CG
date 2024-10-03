@@ -45,8 +45,7 @@ public class Player1Attack : MonoBehaviour
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
             {
-                int danoRealizado = fuerza;
-                Debug.Log("Ataque de personaje 1 exitoso, daño realizado: " + danoRealizado);
+                Debug.Log("El ataque de personaje 1 es exitoso, supera la fuerza del personaje.");
                 return true;
             }
             else
@@ -65,7 +64,7 @@ public class Player1Attack : MonoBehaviour
             int d4 = Random.Range(0, 4);
 
             int valorAtaque = d10 + d4;
-            Debug.Log("Tirada de ataque de personaje 1: " + d10 + "+" + d4 + " = " + valorAtaque);
+            Debug.Log("El personaje hizo el siguiente daño: " + d10 + "+" + d4 + " = " + valorAtaque);
 
             //Enemigo1.getDamage(valorAtaque);
 
@@ -83,7 +82,7 @@ public class Player1Attack : MonoBehaviour
             int d6B = Random.Range(0, 6);
 
             int valorAtaque = d6A + d6B;
-            Debug.Log("Tirada de ataque de personaje 1: " + d6A + "+" + d6B + " = " + valorAtaque);
+            Debug.Log("El personaje hizo el siguiente daño: " + d6A + "+" + d6B + " = " + valorAtaque);
 
             //Enemigo1.getDamage(valorAtaque);
 
