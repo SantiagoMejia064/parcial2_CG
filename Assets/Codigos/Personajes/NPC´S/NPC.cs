@@ -103,7 +103,7 @@ public class NPC : MonoBehaviour
         if (otro.CompareTag("Player"))
         {
             distanciaJugador = true;
-            Debug.Log(gameManager.cantLlaveMorada);
+            Debug.Log("Tiene " + gameManager.cantLlaveMorada + " llaves moradas");
         }
 
         // Detecta si el jugador ha recogido el objeto

@@ -361,6 +361,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &620299593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 620299595}
+  - component: {fileID: 620299594}
+  m_Layer: 0
+  m_Name: GamenManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &620299594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620299593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafd2695fddc0674c9c6b91621694a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punto: {fileID: 0}
+  cantLlaveMorada: 0
+--- !u!4 &620299595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620299593}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -30.552967, y: -11.3015, z: -0.017420808}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638919243
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +644,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21dc830570193a448e702feecbaea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 620299594}
+  punto: {fileID: 0}
 --- !u!4 &812515013
 Transform:
   m_ObjectHideFlags: 0
@@ -939,7 +987,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 812515012}
         m_TargetAssemblyTypeName: EscenaManager, Assembly-CSharp
-        m_MethodName: inicioJuego
+        m_MethodName: irPueblo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1176,5 +1224,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 316472792}
   - {fileID: 2020425996}
-  - {fileID: 812515013}
   - {fileID: 1780141304}
+  - {fileID: 812515013}
+  - {fileID: 620299595}

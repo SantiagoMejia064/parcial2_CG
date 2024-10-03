@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovimientoPlataforma : MonoBehaviour
 {
     public EscenaManager escenaManager;
+    public GameManager gameManager;
     [SerializeField]
     public Rigidbody2D rb;
 
@@ -149,7 +150,7 @@ public class MovimientoPlataforma : MonoBehaviour
         {
             GameManager.instance.SetLlavesMoradas();
 
-            Debug.Log(GameManager.instance.cantLlaveMorada);
+            Debug.Log("TIENE " + gameManager.cantLlaveMorada + " llaves moradas");
 
             Destroy(collision.gameObject);
 

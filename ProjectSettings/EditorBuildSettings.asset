@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Pueblo.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Menu.unity
+    guid: 2957d67a2e7b2ad44a07bfb2d99eba56
+  - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: 094b70aa5374fb847b533bf44065acc3
   - enabled: 1
     path: Assets/Scenes/Juego.unity
     guid: a557c5e471e01da4eb6e8f2c1d86fa7a
   - enabled: 1
-    path: Assets/Scenes/Final.unity
-    guid: bc2472972c541924ca8a1ee3d80aa8fb
+    path: Assets/Scenes/Combate.unity
+    guid: c51761d87b43bb44992a397f0fa94b8f
   - enabled: 1
     path: Assets/Scenes/Boss.unity
     guid: e28579adc2a014f4288e0809b87dd1dd
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: bc2472972c541924ca8a1ee3d80aa8fb
   m_configObjects: {}

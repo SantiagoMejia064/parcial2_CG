@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public void SetLlavesMoradas()
     {
+        Debug.Log("Se ha obtenido una llave morada");
         cantLlaveMorada++;
         //llavesMoradas.text = "Llaves Moradas: " + cantLlaveMorada.ToString();
     }

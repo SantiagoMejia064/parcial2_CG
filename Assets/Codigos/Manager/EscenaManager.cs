@@ -7,7 +7,7 @@ public class EscenaManager : MonoBehaviour
 {
 
     public static EscenaManager instance { get; private set; }
-
+    public GameManager gameManager;
     public Transform punto;
 
     private void Awake()
@@ -25,6 +25,7 @@ public class EscenaManager : MonoBehaviour
     
     public void inicioJuego(){
         SceneManager.LoadScene("Juego", LoadSceneMode.Single);
+        Debug.Log("Tiene " + gameManager.cantLlaveMorada + " llaves moradas");
     }
 
     public void finJuego(){
@@ -41,7 +42,11 @@ public class EscenaManager : MonoBehaviour
 
     public void irPueblo ()
     {
-        SceneManager.LoadScene("Pueblo", LoadSceneMode.Single);
+        SceneManager.LoadScene("Town", LoadSceneMode.Single);
+    }
+
+    public void irCombate(){
+        SceneManager.LoadScene("Combate", LoadSceneMode.Single);
     }
 
     public void salirJuego(){
