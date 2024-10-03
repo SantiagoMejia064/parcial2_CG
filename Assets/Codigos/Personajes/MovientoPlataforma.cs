@@ -154,14 +154,22 @@ public class MovimientoPlataforma : MonoBehaviour
 
             moneda.Play();
         }
+
+        EscenaManager.instance.punto = collision.transform.position;
+
+        jugadre.transform.position = EscenaManager.instance.punto;
+        salugjugadores = EscenaManager.instance.salud;
     }
     */
+    
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "PlataformaMovil")
         {
             transform.parent = null;
         }
+
+
     }
     
 }

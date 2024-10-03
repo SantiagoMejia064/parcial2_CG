@@ -8,6 +8,8 @@ public class EscenaManager : MonoBehaviour
 
     public static EscenaManager instance { get; private set; }
 
+    public Transform punto;
+
     private void Awake()
     {
         if (instance != null && instance != this)
