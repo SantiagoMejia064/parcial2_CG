@@ -5,47 +5,60 @@ using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
-    public GameObject panelDialogo;
-    public Text textoDialogo;
-    public string[] dialogo;
+    public GameObject panelDialogo;  // Panel de diálogo
+    public Text textoDialogo;        // Texto del diálogo
+    public string[] dialogo;         // Primer conjunto de diálogos
     private int index;
 
-    public GameObject boton;
-    public float velocidadTexto;
-    public bool distanciaJugador;
+    public GameObject boton;         // Botón de continuar
+    public float velocidadTexto;     // Velocidad de escritura
+    public bool distanciaJugador;    // Verifica si el jugador está cerca del NPC
 
-    // Update is called once per frame
+    public GameObject objetoRequerido;  // Referencia al objeto que el jugador debe recoger
+    private bool objetoRecogido = false;  // Estado para saber si el objeto ha sido recogido
+
+    public string[] segundoDialogo;  // Segundo conjunto de diálogos
+
+    private bool primerDialogoTerminado = false;  // Saber si el primer diálogo ha terminado
+    private bool puedeMostrarSegundoDialogo = false;  // Saber si puede activar el segundo diálogo
+
     void Start()
     {
-        panelDialogo.SetActive(false);
+        panelDialogo.SetActive(false); // Asegúrate de que el panel de diálogo esté desactivado al principio
+        boton.SetActive(false);        // Desactiva el botón de continuar al inicio
     }
-    
-    
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && distanciaJugador)
+        if (Input.GetKeyDown(KeyCode.E) && distanciaJugador)
         {
-            if(panelDialogo.activeInHierarchy)
+            if (panelDialogo.activeInHierarchy)
             {
-                ceroTexto();
+                ceroTexto();  // Si el diálogo está activo, lo cierra
             }
             else
             {
-                panelDialogo.SetActive(true); 
-                StartCoroutine(Escritura());
-
+                if (!primerDialogoTerminado)
+                {
+                    panelDialogo.SetActive(true);
+                    StartCoroutine(Escritura());
+                }
+                else if (objetoRecogido && puedeMostrarSegundoDialogo)
+                {
+                    panelDialogo.SetActive(true);  // Activa el segundo diálogo solo si el objeto ha sido recogido
+                    MostrarSegundoDialogo();
+                }
             }
+        }
 
-        }  
-
-        if(textoDialogo.text == dialogo[index])
+        // Solo activar el botón si el diálogo está completo
+        if (textoDialogo.text == dialogo[index])
         {
             boton.SetActive(true);
-        } 
-
+        }
     }
 
-
+    // Limpia el texto y reinicia el diálogo
     public void ceroTexto()
     {
         textoDialogo.text = "";
@@ -53,22 +66,24 @@ public class NPC : MonoBehaviour
         panelDialogo.SetActive(false);
     }
 
-
+    // Escribe el diálogo letra por letra
     IEnumerator Escritura()
     {
-        foreach(char letter in dialogo[index].ToCharArray())
+        textoDialogo.text = "";  // Limpia el texto actual
+
+        foreach (char letter in dialogo[index].ToCharArray())
         {
             textoDialogo.text += letter;
-            yield return new WaitForSeconds(velocidadTexto);
+            yield return new WaitForSeconds(velocidadTexto);  // Velocidad de escritura
         }
     }
 
+    // Avanza al siguiente diálogo o termina el primer conjunto
     public void sigLinea()
     {
-        if(index == dialogo.Length - 1){
-            boton.SetActive(false);
-        }
-        if(index < dialogo.Length - 1)
+        boton.SetActive(false);  // Desactiva el botón hasta que se complete la línea
+
+        if (index < dialogo.Length - 1)
         {
             index++;
             textoDialogo.text = " ";
@@ -76,27 +91,45 @@ public class NPC : MonoBehaviour
         }
         else
         {
+            // Cuando termina el primer diálogo, se cierra el panel y se espera a recoger el objeto
+            primerDialogoTerminado = true;
             ceroTexto();
         }
     }
 
-
+    // Detecta la entrada del jugador al área de interacción
     private void OnTriggerEnter2D(Collider2D otro)
     {
-        if(otro.CompareTag("Player"))
+        if (otro.CompareTag("Player"))
         {
             distanciaJugador = true;
+        }
 
+        // Detecta si el jugador ha recogido el objeto
+        if (otro.gameObject == objetoRequerido)
+        {
+            Debug.Log("Objeto requerido recogido.");
+            objetoRecogido = true;
+            Destroy(objetoRequerido);  // Destruye el objeto al recogerlo
+            puedeMostrarSegundoDialogo = true;
         }
     }
 
+    // Detecta cuando el jugador sale del área de interacción
     private void OnTriggerExit2D(Collider2D otro)
     {
-        if(otro.CompareTag("Player"))
+        if (otro.CompareTag("Player"))
         {
             distanciaJugador = false;
             ceroTexto();
-
         }
+    }
+
+    // Muestra el segundo diálogo después de recoger el objeto
+    void MostrarSegundoDialogo()
+    {
+        dialogo = segundoDialogo;  // Cambia al segundo conjunto de diálogos
+        index = 0;                 // Reinicia el índice
+        StartCoroutine(Escritura());   // Comienza a escribir el segundo diálogo
     }
 }
