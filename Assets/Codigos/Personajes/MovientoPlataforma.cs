@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovimientoPlataforma : MonoBehaviour
 {
@@ -140,6 +141,12 @@ public class MovimientoPlataforma : MonoBehaviour
         if (collision.gameObject.tag == "PlataformaMovil")
         {
             transform.parent = collision.transform;
+        }
+
+        if(collision.gameObject.tag == "Enemigo")
+        {
+            SceneManager.LoadScene("Combate", LoadSceneMode.Single);
+            Destroy(collision.gameObject);
         }
     }
 

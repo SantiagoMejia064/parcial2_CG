@@ -10,14 +10,10 @@ public class Woman : MonoBehaviour
     public float velocidadMovimiento = 2f;  // Velocidad de movimiento hacia la izquierda
     private bool moviendoIzquierda = false; // Estado para saber si el personaje 2 debe moverse
 
-    public Text textoUI;
-    public string mensajeTexto = "PEGUE PEGUE Y PEGUE";  // Mensaje a mostrar
-
 
     void Start()
     {
-        // Asegúrate de que el texto está desactivado al principio
-        textoUI.gameObject.SetActive(false);
+        
     }
 
     void Update()
@@ -29,7 +25,6 @@ public class Woman : MonoBehaviour
         if (distancia <= distanciaActivacion && !moviendoIzquierda)
         {
             moviendoIzquierda = true;  // Inicia el movimiento hacia la izquierda
-            MostrarTexto(); 
         }
 
         // Si se activa el movimiento, mueve al personaje 2 hacia la izquierda
@@ -53,18 +48,5 @@ public class Woman : MonoBehaviour
         }
     }
 
-    void MostrarTexto()
-    {
-        // Activa el texto y asigna el mensaje
-        textoUI.gameObject.SetActive(true);
-        textoUI.text = mensajeTexto;
-        
-        // Si deseas ocultar el texto después de un tiempo, puedes desactivarlo luego de unos segundos (opcional)
-        // Invoke("OcultarTexto", 2f);  // Oculta el texto después de 2 segundos
-    }
-
-     void OcultarTexto()
-    {
-        textoUI.gameObject.SetActive(false);
-    }
+    
 }
