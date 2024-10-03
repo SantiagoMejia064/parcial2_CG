@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Enemigo1 : MonoBehaviour
+public class Enemigo3 : MonoBehaviour
 {
     public GameObject Player;
     public CombateManager combate;
@@ -57,10 +56,10 @@ public class Enemigo1 : MonoBehaviour
     {
         if (TiradaDeExito())
         {
-            int d6 = Random.Range(0, 6);
+            int d4 = Random.Range(0, 4);
 
-            int valorAtaque = d6;
-            Debug.Log("El personaje hizo el siguiente daño: " + d6 +  " = " + valorAtaque);
+            int valorAtaque = d4;
+            Debug.Log("El personaje hizo el siguiente daño: " + d4 + " = " + valorAtaque);
 
             //Player.getDamage(valorAtaque);
 
