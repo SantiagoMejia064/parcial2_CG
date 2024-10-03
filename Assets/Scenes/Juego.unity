@@ -577,6 +577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPlataforma 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7168817509697974596, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7192229229355104544, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
       propertyPath: m_Size.x
       value: 0.12858814
@@ -660,6 +664,10 @@ PrefabInstance:
     - target: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma
+      objectReference: {fileID: 0}
+    - target: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7477677312454418949, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_LocalScale.x
@@ -919,6 +927,10 @@ PrefabInstance:
     - target: {fileID: 7168817509697974596, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7168817509697974596, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7192229229355104544, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
       propertyPath: m_Size.x
@@ -1330,6 +1342,10 @@ PrefabInstance:
     - target: {fileID: 7168817509697974596, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7168817509697974596, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7192229229355104544, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: m_Size.x

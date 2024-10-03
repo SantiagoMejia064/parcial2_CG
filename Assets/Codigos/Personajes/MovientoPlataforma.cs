@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovimientoPlataforma : MonoBehaviour
 {
+    public EscenaManager escenaManager;
     [SerializeField]
     public Rigidbody2D rb;
 
@@ -154,6 +155,11 @@ public class MovimientoPlataforma : MonoBehaviour
 
             //moneda.Play();
         }
+
+        if(collision.tag == "PuertaSalirPueblo"){
+            escenaManager.inicioJuego();
+        }
+
         /*
         EscenaManager.instance.punto = collision.transform.position;
 
