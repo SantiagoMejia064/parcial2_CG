@@ -141,26 +141,27 @@ public class MovimientoPlataforma : MonoBehaviour
         }
     }
 
-    /*
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Moneda")
+        if (collision.tag == "ObjetoRequerido")
         {
-            GameManager.Instance.SetMonedas();
+            GameManager.instance.SetLlavesMoradas();
 
-            Debug.Log(GameManager.Instance.cantMonedas);
+            Debug.Log(GameManager.instance.cantLlaveMorada);
 
             Destroy(collision.gameObject);
 
-            moneda.Play();
+            //moneda.Play();
         }
-
+        /*
         EscenaManager.instance.punto = collision.transform.position;
 
         jugadre.transform.position = EscenaManager.instance.punto;
         salugjugadores = EscenaManager.instance.salud;
+        */
     }
-    */
+
     
     private void OnCollisionExit2D(Collision2D collision)
     {

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
+    public GameManager gameManager;
     public GameObject panelDialogo;  // Panel de diálogo
     public Text textoDialogo;        // Texto del diálogo
     public string[] dialogo;         // Primer conjunto de diálogos
@@ -15,7 +16,6 @@ public class NPC : MonoBehaviour
     public bool distanciaJugador;    // Verifica si el jugador está cerca del NPC
 
     public GameObject objetoRequerido;  // Referencia al objeto que el jugador debe recoger
-    private bool objetoRecogido = false;  // Estado para saber si el objeto ha sido recogido
 
     public string[] segundoDialogo;  // Segundo conjunto de diálogos
 
@@ -43,7 +43,7 @@ public class NPC : MonoBehaviour
                     panelDialogo.SetActive(true);
                     StartCoroutine(Escritura());
                 }
-                else if (objetoRecogido && puedeMostrarSegundoDialogo)
+                else if (puedeMostrarSegundoDialogo)
                 {
                     panelDialogo.SetActive(true);  // Activa el segundo diálogo solo si el objeto ha sido recogido
                     MostrarSegundoDialogo();
@@ -103,14 +103,12 @@ public class NPC : MonoBehaviour
         if (otro.CompareTag("Player"))
         {
             distanciaJugador = true;
+            Debug.Log(gameManager.cantLlaveMorada);
         }
 
         // Detecta si el jugador ha recogido el objeto
-        if (otro.gameObject == objetoRequerido)
+        if (gameManager.cantLlaveMorada > 0)
         {
-            Debug.Log("Objeto requerido recogido.");
-            objetoRecogido = true;
-            Destroy(objetoRequerido);  // Destruye el objeto al recogerlo
             puedeMostrarSegundoDialogo = true;
         }
     }

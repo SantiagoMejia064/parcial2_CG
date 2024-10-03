@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public Transform punto;
 
+    public int cantLlaveMorada = 0;
+    //public Text llavesMoradas;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -19,5 +22,11 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void SetLlavesMoradas()
+    {
+        cantLlaveMorada++;
+        //llavesMoradas.text = "Llaves Moradas: " + cantLlaveMorada.ToString();
     }
 }
