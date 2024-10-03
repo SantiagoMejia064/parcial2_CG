@@ -11,11 +11,13 @@ public class Player1Attack : MonoBehaviour
     public GameObject Player;
     public CombateManager combate;
 
-    public EscenaManager escenaManager;
+    //public EscenaManager escenaManager;
+
     [Header("Estadisticas")]
     public int salud;
     public int fuerza;
     public int resistencia;
+
     public bool TiradaDeExito()
     {
         int tirada = Random.Range(0, 10); // Genera un n�mero aleatorio entre 0 y 9 (1D10)
@@ -101,7 +103,7 @@ public class Player1Attack : MonoBehaviour
         if (salud <= 0)
         {
             Invoke("DestruirPersonaje", 1f);  // Espera 1 segundos antes de destruir el objeto
-            escenaManager.inicioJuego();
+            //escenaManager.inicioJuego();
         }
     }
 
