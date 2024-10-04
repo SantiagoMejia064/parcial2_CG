@@ -47,13 +47,14 @@ public class CombateManager : MonoBehaviour
         peleadorindex = 0;
         peleadores[peleadorindex].InitTurn();
     }*/
-    
+    /*
     void Start()
     {
         //playerAttacking = true;
         //enemyAttacking = false;
         StartCoroutine(eleccionAtaque());
     }
+    */
     void Awake(){
         if(GameManager.Instance != null)
         {

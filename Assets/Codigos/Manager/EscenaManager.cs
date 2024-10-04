@@ -7,6 +7,7 @@ public class EscenaManager : MonoBehaviour
 {
 
     public static EscenaManager instance { get; private set; }
+    public GameManager gameManager;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -22,7 +23,9 @@ public class EscenaManager : MonoBehaviour
     
     public void inicioJuego(){
         SceneManager.LoadScene("Juego", LoadSceneMode.Single);
-        Debug.Log("Tiene " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
+        //Debug.Log("Tiene " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
+        gameManager.SetEnemigoAzar();
+        
     }
 
     public void finJuego(){

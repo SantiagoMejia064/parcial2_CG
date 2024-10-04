@@ -8,9 +8,26 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] public int enemigoEnColision;
+    [SerializeField] public GameObject[] enemigos;
+    private int actEnemigos;
 
     public int cantLlaveMorada = 0;
     //public Text llavesMoradas;
+
+
+    public void SetEnemigoAzar(){
+        for (int i = 0; i < enemigos.Length; i++)
+        {
+            actEnemigos = Random.Range(0, 2);
+            if (actEnemigos == 1)
+            {
+                //enemigos[i].GetComponent<GameObject>().SetActive(true);
+                enemigos[i].SetActive(true);
+            }else{
+                enemigos[i].SetActive(false);   
+            }
+        }
+    }
     private void Awake()
     {
         if (Instance != null && Instance != this)
