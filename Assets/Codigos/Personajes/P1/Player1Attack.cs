@@ -10,6 +10,10 @@ public class Player1Attack : MonoBehaviour
 
     public GameObject Player;
     public CombateManager combate;
+    public Enemigo1 enemigo1;
+    public Enemigo2 enemigo2;
+    public Enemigo3 enemigo3;
+    public Enemigo4 enemigo4;
 
     //public EscenaManager escenaManager;
 
@@ -23,6 +27,8 @@ public class Player1Attack : MonoBehaviour
         if (tirada <= 3)
         {
             Debug.Log(tirada + "Pifia en la tirada de exito, no se realiza accion.");
+            combate.playerAttacking = false;
+            combate.enemyAttacking = true; 
             return false;
 
         }
@@ -40,16 +46,22 @@ public class Player1Attack : MonoBehaviour
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
                 Debug.Log("Pifia en el ataque de personaje 1, no se hace daño.");
+                combate.playerAttacking = false;
+                combate.enemyAttacking = true; 
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
             {
                 Debug.Log("El ataque de personaje 1 es exitoso, supera la fuerza del personaje.");
+                combate.playerAttacking = false;
+                combate.enemyAttacking = true; 
                 return true;
             }
             else
             {
                 Debug.Log("El ataque de personaje 1 no es exitoso, no supera la fuerza del personaje.");
+                combate.playerAttacking = false;
+                combate.enemyAttacking = true; 
                 return false;
             }
         }
@@ -64,6 +76,24 @@ public class Player1Attack : MonoBehaviour
 
             int valorAtaque = d10 + d4;
             Debug.Log("El personaje hizo el siguiente daño: " + d10 + "+" + d4 + " = " + valorAtaque);
+
+            switch(GameManager.Instance.enemigoEnColision){
+                case 1:
+                    enemigo1.GetDamage(valorAtaque);
+                    break;
+                case 2:
+                    enemigo2.GetDamage(valorAtaque);
+                    break;
+                case 3:
+                    enemigo3.GetDamage(valorAtaque);
+                    break;
+                case 4:
+                    enemigo4.GetDamage(valorAtaque);
+                    break;
+                default:
+                    Debug.LogWarning("indice de enemigo invalido");
+                    break;
+            }
 
             //Enemigo1.getDamage(valorAtaque);
 

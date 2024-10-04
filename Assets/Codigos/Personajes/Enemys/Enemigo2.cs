@@ -9,7 +9,6 @@ public class Enemigo2 : MonoBehaviour
     public EscenaManager escenaManager;
 
     [Header("Estadisticas")]
-    public int salud;
     public int fuerza;
     public int resistencia;
 
@@ -69,13 +68,13 @@ public class Enemigo2 : MonoBehaviour
 
     public void GetDamage(int dmg)
     {
-        salud -= dmg;  // Resta la cantidad de da?o
+        resistencia -= dmg;  // Resta la cantidad de da?o
         Dead();
     }
 
     public void Dead()
     {
-        if (salud <= 0)
+        if (resistencia <= 0)
         {
             Invoke("DestruirPersonaje", 1f);  // Espera 1 segundos antes de destruir el objeto
             //escenaManager.inicioJuego();

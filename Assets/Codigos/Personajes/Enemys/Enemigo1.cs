@@ -9,16 +9,21 @@ public class Enemigo1 : MonoBehaviour
     public EscenaManager escenaManager;
 
     [Header("Estadisticas")]
-    public int salud;
     public int fuerza;
     public int resistencia;
 
+    public void atacar(){
+        TiradaDeExito();
+        TiradaAtaque();
+    }
     public bool TiradaDeExito()
     {
         int tirada = Random.Range(0, 10); // Genera un n?mero aleatorio entre 0 y 9 (1D10)
         if (tirada <= 3)
         {
             Debug.Log(tirada + "Pifia en la tirada de exito, no se realiza accion.");
+            combate.playerAttacking = false;
+            combate.enemyAttacking = true;
             return false;
 
         }
@@ -36,16 +41,22 @@ public class Enemigo1 : MonoBehaviour
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
                 Debug.Log("Pifia en el ataque de personaje 1, no se hace da�o.");
+                combate.playerAttacking = false;
+                combate.enemyAttacking = true;
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
             {
                 Debug.Log("El ataque de personaje 1 es exitoso, supera la fuerza del personaje.");
+                combate.playerAttacking = false;
+                combate.enemyAttacking = true;
                 return true;
             }
             else
             {
                 Debug.Log("El ataque de personaje 1 no es exitoso, no supera la fuerza del personaje.");
+                combate.playerAttacking = false;
+                combate.enemyAttacking = true;
                 return false;
             }
         }
@@ -67,13 +78,13 @@ public class Enemigo1 : MonoBehaviour
 
     public void GetDamage(int dmg)
     {
-        salud -= dmg;  // Resta la cantidad de da?o
+        resistencia -= dmg;  // Resta la cantidad de da?o
         Dead();
     }
 
     public void Dead()
     {
-        if (salud <= 0)
+        if (resistencia <= 0)
         {
             Invoke("DestruirPersonaje", 1f);  // Espera 1 segundos antes de destruir el objeto
             //escenaManager.inicioJuego();

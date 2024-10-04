@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1129064746}
+      - m_Target: {fileID: 676643907}
         m_TargetAssemblyTypeName: Player1Attack, Assembly-CSharp
         m_MethodName: TiradaAtaque
         m_Mode: 1
@@ -301,7 +301,6 @@ MonoBehaviour:
   enemigo4: {fileID: 1865107501}
   playerAttacking: 0
   enemyAttacking: 0
-  gameManager: {fileID: 1295921853}
   panelSeleccionPersonajes: {fileID: 1018099200}
 --- !u!4 &16763639
 Transform:
@@ -313,54 +312,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.61288774, y: -0.18262176, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &77395939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 77395941}
-  - component: {fileID: 77395940}
-  m_Layer: 0
-  m_Name: Player4Attack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &77395940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77395939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4fe503f12f623346a4bd0f097b32f93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 537722188}
-  combate: {fileID: 16763638}
-  fuerza: 0
-  resistencia: 0
---- !u!4 &77395941
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77395939}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75093114, y: -1.8930385, z: -0.036119215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -740,54 +691,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267910055}
   m_CullTransparentMesh: 1
---- !u!1 &272006640
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 272006642}
-  - component: {fileID: 272006641}
-  m_Layer: 0
-  m_Name: Player3Attack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &272006641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272006640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b16384e8227bfb4db6c9462f1edb725, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 2086604791}
-  combate: {fileID: 16763638}
-  fuerza: 0
-  resistencia: 0
---- !u!4 &272006642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272006640}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75093114, y: -1.8930385, z: -0.036119215}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &273266817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -970,6 +873,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7168817509697974596, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
   m_PrefabInstance: {fileID: 1327790546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &433652795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1049620758259136767, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
+  m_PrefabInstance: {fileID: 1327790546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433652794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32443f5cb2133b44e826d24c6513f3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &479453674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +973,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7168817509697974596, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
   m_PrefabInstance: {fileID: 273266817}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &537722189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5316205989050561682, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
+  m_PrefabInstance: {fileID: 273266817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537722188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4fe503f12f623346a4bd0f097b32f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &563396288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,7 +1067,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1129064746}
+      - m_Target: {fileID: 676643907}
         m_TargetAssemblyTypeName: Player1Attack, Assembly-CSharp
         m_MethodName: TiradaAtaque2
         m_Mode: 1
@@ -1398,6 +1323,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
   m_PrefabInstance: {fileID: 1506591211}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &676643907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3517043539199423108, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+  m_PrefabInstance: {fileID: 1506591211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676643906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd1356819ac9e94ea20193bb9de8dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &708174370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 168438799604990570, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
@@ -1675,7 +1611,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2091936974}
+      - m_Target: {fileID: 433652795}
         m_TargetAssemblyTypeName: Player2Attack, Assembly-CSharp
         m_MethodName: TiradaAtaque3
         m_Mode: 1
@@ -1833,7 +1769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21dc830570193a448e702feecbaea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punto: {fileID: 0}
 --- !u!4 &949957484
 Transform:
   m_ObjectHideFlags: 0
@@ -1932,7 +1867,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2091936974}
+      - m_Target: {fileID: 433652795}
         m_TargetAssemblyTypeName: Player2Attack, Assembly-CSharp
         m_MethodName: TiradaAtaque
         m_Mode: 1
@@ -2341,54 +2276,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100993013}
   m_CullTransparentMesh: 1
---- !u!1 &1129064745
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1129064747}
-  - component: {fileID: 1129064746}
-  m_Layer: 0
-  m_Name: Player1Attack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1129064746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129064745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccd1356819ac9e94ea20193bb9de8dae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 676643906}
-  combate: {fileID: 16763638}
-  fuerza: 0
-  resistencia: 0
---- !u!4 &1129064747
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129064745}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75093114, y: -1.8930385, z: -0.036119215}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1247100465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigoEnColision: 0
-  punto: {fileID: 0}
   cantLlaveMorada: 0
 --- !u!4 &1295921854
 Transform:
@@ -2696,7 +2582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 272006641}
+      - m_Target: {fileID: 2086604792}
         m_TargetAssemblyTypeName: Player3Attack, Assembly-CSharp
         m_MethodName: TiradaAtaque
         m_Mode: 1
@@ -3164,7 +3050,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 77395940}
+      - m_Target: {fileID: 537722189}
         m_TargetAssemblyTypeName: Player4Attack, Assembly-CSharp
         m_MethodName: TiradaAtaque
         m_Mode: 1
@@ -3321,6 +3207,18 @@ PrefabInstance:
       propertyPath: enemigo1
       value: 
       objectReference: {fileID: 708174377}
+    - target: {fileID: 3517043539199423108, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+      propertyPath: enemigo2
+      value: 
+      objectReference: {fileID: 1065057538}
+    - target: {fileID: 3517043539199423108, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+      propertyPath: enemigo3
+      value: 
+      objectReference: {fileID: 1583769876}
+    - target: {fileID: 3517043539199423108, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+      propertyPath: enemigo4
+      value: 
+      objectReference: {fileID: 1865107508}
     - target: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma
@@ -4274,54 +4172,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7168817509697974596, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
   m_PrefabInstance: {fileID: 1285227684}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2091936973
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2091936975}
-  - component: {fileID: 2091936974}
-  m_Layer: 0
-  m_Name: Player2Attack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2091936974
+--- !u!114 &2086604792 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6330294150294607043, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
+  m_PrefabInstance: {fileID: 1285227684}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091936973}
+  m_GameObject: {fileID: 2086604791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32443f5cb2133b44e826d24c6513f3c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b16384e8227bfb4db6c9462f1edb725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 433652794}
-  combate: {fileID: 16763638}
-  fuerza: 0
-  resistencia: 0
---- !u!4 &2091936975
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091936973}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75093114, y: -1.8930385, z: -0.036119215}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2141646256
 GameObject:
   m_ObjectHideFlags: 0
@@ -4405,7 +4266,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2091936974}
+      - m_Target: {fileID: 433652795}
         m_TargetAssemblyTypeName: Player2Attack, Assembly-CSharp
         m_MethodName: TiradaAtaque2
         m_Mode: 1
@@ -4802,10 +4663,6 @@ SceneRoots:
   - {fileID: 1327790546}
   - {fileID: 1285227684}
   - {fileID: 273266817}
-  - {fileID: 1129064747}
-  - {fileID: 2091936975}
-  - {fileID: 272006642}
-  - {fileID: 77395941}
-  - {fileID: 16763639}
   - {fileID: 1295921854}
+  - {fileID: 16763639}
   - {fileID: 949957484}
