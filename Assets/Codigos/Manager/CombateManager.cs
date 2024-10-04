@@ -17,11 +17,40 @@ public class CombateManager : MonoBehaviour
     public GameObject P2Attack3;
     public GameObject P3Attack1;
     public GameObject P4Attack1;
+    public GameObject enemigo1;
+    public GameObject enemigo2;
+    public GameObject enemigo3;
+    public GameObject enemigo4;
     public bool playerAttacking;
     public bool enemyAttacking;
+    public GameManager gameManager;
 
     // Referencia al panel de selecci�n de personajes
     public GameObject panelSeleccionPersonajes;
+
+    void Awake(){
+
+        
+        //Debug.Log("Colisionó con enemigo #" + gameManager.enemigoEnColision);
+        switch(GameManager.Instance.enemigoEnColision){
+            case 1:
+                enemigo1.SetActive(true);
+                break;
+            case 2:
+                enemigo2.SetActive(true);
+                break;
+            case 3:
+                enemigo3.SetActive(true);
+                break;
+            case 4:
+                enemigo4.SetActive(true);
+                break;
+            default:
+                Debug.LogWarning("indice de enemigo invalido");
+                break;
+
+        }
+    }
 
     // M�todo que selecciona el personaje basado en el �ndice (del bot�n presionado)
     public void SeleccionarPersonaje(int indice)
@@ -38,6 +67,7 @@ public class CombateManager : MonoBehaviour
         P2Attack3.SetActive(false);
         P3Attack1.SetActive(false);
         P4Attack1.SetActive(false);
+        
 
         // Activar el personaje seleccionado
         switch (indice)

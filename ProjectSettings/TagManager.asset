@@ -8,7 +8,10 @@ TagManager:
   - Desaparicion
   - ObjetoRequerido
   - PuertaSalirPueblo
-  - Enemigo
+  - Enemigo1
+  - Enemigo2
+  - Enemigo3
+  - Enemigo4
   layers:
   - Default
   - TransparentFX

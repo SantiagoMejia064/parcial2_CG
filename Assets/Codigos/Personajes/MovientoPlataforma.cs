@@ -7,6 +7,7 @@ public class MovimientoPlataforma : MonoBehaviour
 {
     public EscenaManager escenaManager;
     public GameManager gameManager;
+    public CombateManager combate;
     [SerializeField]
     public Rigidbody2D rb;
 
@@ -142,12 +143,6 @@ public class MovimientoPlataforma : MonoBehaviour
         {
             transform.parent = collision.transform;
         }
-
-        if(collision.gameObject.tag == "Enemigo")
-        {
-            SceneManager.LoadScene("Combate", LoadSceneMode.Single);
-            Destroy(collision.gameObject);
-        }
     }
 
     
@@ -155,9 +150,9 @@ public class MovimientoPlataforma : MonoBehaviour
     {
         if (collision.tag == "ObjetoRequerido")
         {
-            GameManager.instance.SetLlavesMoradas();
+            GameManager.Instance.SetLlavesMoradas();
 
-            Debug.Log("TIENE " + gameManager.cantLlaveMorada + " llaves moradas");
+            Debug.Log("TIENE " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
 
             Destroy(collision.gameObject);
 

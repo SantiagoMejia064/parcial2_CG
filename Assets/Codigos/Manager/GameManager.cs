@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance { get; private set; }
+    public static GameManager Instance { get; private set; }
+
+    [SerializeField] public int enemigoEnColision;
 
     public Transform punto;
 
@@ -13,13 +15,13 @@ public class GameManager : MonoBehaviour
     //public Text llavesMoradas;
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this);
         }
         else
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -29,5 +31,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("Se ha obtenido una llave morada");
         cantLlaveMorada++;
         //llavesMoradas.text = "Llaves Moradas: " + cantLlaveMorada.ToString();
+    }
+
+    public void SetEnemigoEnColision(int enemigo)
+    {
+        enemigoEnColision = enemigo;
     }
 }

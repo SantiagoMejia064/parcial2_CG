@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Enemigo4 : MonoBehaviour
 {
-    public GameObject Player;
     public CombateManager combate;
-
-    //public EscenaManager escenaManager;
+    public EscenaManager escenaManager;
 
     [Header("Estadisticas")]
     public int salud;
@@ -36,7 +34,7 @@ public class Enemigo4 : MonoBehaviour
 
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
-                Debug.Log("Pifia en el ataque de personaje 1, no se hace daño.");
+                Debug.Log("Pifia en el ataque de personaje 1, no se hace daï¿½o.");
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
@@ -59,7 +57,7 @@ public class Enemigo4 : MonoBehaviour
             int d10 = Random.Range(0, 10);
 
             int valorAtaque = d10;
-            Debug.Log("El personaje hizo el siguiente daño: " + d10 + " = " + valorAtaque);
+            Debug.Log("El personaje hizo el siguiente daï¿½o: " + d10 + " = " + valorAtaque);
 
             //Player.getDamage(valorAtaque);
 
@@ -86,5 +84,15 @@ public class Enemigo4 : MonoBehaviour
     public void DestruirPersonaje()
     {
         Destroy(gameObject);  // Destruye el objeto donde est? este script (el jugador)
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.tag == "Player"){
+            Debug.Log("Enemigo en colision: 4");
+            GameManager.Instance.SetEnemigoEnColision(4);
+            Debug.Log("SerÃ¡ que si cambia el numero " + GameManager.Instance.enemigoEnColision);
+            Destroy(collision.gameObject);
+            escenaManager.irCombate();
+        }
     }
 }
