@@ -10,7 +10,6 @@ public class Player4Attack : MonoBehaviour
     //public EscenaManager escenaManager;
 
     [Header("Estadisticas")]
-    public int salud;
     public int fuerza;
     public int resistencia;
     public bool TiradaDeExito()
@@ -35,7 +34,7 @@ public class Player4Attack : MonoBehaviour
 
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
-                Debug.Log("Pifia en el ataque de personaje 4, no se hace daño.");
+                Debug.Log("Pifia en el ataque de personaje 4, no se hace daï¿½o.");
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
@@ -71,13 +70,13 @@ public class Player4Attack : MonoBehaviour
 
     public void GetDamage(int dmg)
     {
-        salud -= dmg;  // Resta la cantidad de da?o
+        resistencia -= dmg;  // Resta la cantidad de da?o
         Dead();
     }
 
     public void Dead()
     {
-        if (salud <= 0)
+        if (resistencia <= 0)
         {
             Invoke("DestruirPersonaje", 1f);  // Espera 1 segundos antes de destruir el objeto
             //escenaManager.inicioJuego();
