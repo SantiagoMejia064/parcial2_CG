@@ -318,7 +318,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combate: {fileID: 702119435}
   escenaManager: {fileID: 1220102915}
-  salud: 0
   fuerza: 0
   resistencia: 0
 --- !u!61 &190540048
@@ -1002,7 +1001,10 @@ MonoBehaviour:
   enemigo4: {fileID: 1211611336}
   playerAttacking: 0
   enemyAttacking: 0
-  gameManager: {fileID: 782218985}
+  enemigoUNO: {fileID: 793995425}
+  enemigoDOS: {fileID: 190540047}
+  enemigoTRES: {fileID: 1536098135}
+  enemigoCUATRO: {fileID: 1211611337}
   panelSeleccionPersonajes: {fileID: 0}
 --- !u!4 &702119436
 Transform:
@@ -1049,7 +1051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigoEnColision: 0
-  punto: {fileID: 0}
   cantLlaveMorada: 0
 --- !u!4 &782218986
 Transform:
@@ -1196,6 +1197,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15817034, y: 0.3682456}
   m_EdgeRadius: 0
+--- !u!114 &793995425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3472118516275301729, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
+  m_PrefabInstance: {fileID: 793995420}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793995421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f825da4bc0934540aa532cb790bf481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &957121721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1684,7 +1696,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combate: {fileID: 702119435}
   escenaManager: {fileID: 1220102915}
-  salud: 0
   fuerza: 0
   resistencia: 0
 --- !u!95 &1211611338
@@ -1782,7 +1793,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21dc830570193a448e702feecbaea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punto: {fileID: 0}
 --- !u!4 &1220102916
 Transform:
   m_ObjectHideFlags: 0
@@ -2216,7 +2226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combate: {fileID: 702119435}
   escenaManager: {fileID: 1220102915}
-  salud: 0
   fuerza: 0
   resistencia: 0
 --- !u!61 &1536098136

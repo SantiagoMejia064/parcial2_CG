@@ -301,6 +301,10 @@ MonoBehaviour:
   enemigo4: {fileID: 1865107501}
   playerAttacking: 0
   enemyAttacking: 0
+  enemigoUNO: {fileID: 708174377}
+  enemigoDOS: {fileID: 1065057538}
+  enemigoTRES: {fileID: 1583769876}
+  enemigoCUATRO: {fileID: 1865107508}
   panelSeleccionPersonajes: {fileID: 1018099200}
 --- !u!4 &16763639
 Transform:
@@ -2140,7 +2144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combate: {fileID: 16763638}
   escenaManager: {fileID: 949957483}
-  salud: 0
   fuerza: 18
   resistencia: 21
 --- !u!1 &1100993013
@@ -3356,7 +3359,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combate: {fileID: 16763638}
   escenaManager: {fileID: 949957483}
-  salud: 0
   fuerza: 12
   resistencia: 23
 --- !u!1 &1647746834
@@ -4054,7 +4056,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combate: {fileID: 16763638}
   escenaManager: {fileID: 949957483}
-  salud: 0
   fuerza: 19
   resistencia: 35
 --- !u!1 &1919687818

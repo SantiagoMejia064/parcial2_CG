@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Player1Attack : MonoBehaviour
@@ -21,6 +22,15 @@ public class Player1Attack : MonoBehaviour
     public int fuerza;
     public int resistencia;
 
+
+    public Player1Attack(int fuerza, int resistencia){
+        this.fuerza = fuerza;
+        this.resistencia = resistencia;
+    }
+
+    public Player1Attack clone(){
+        return  new Player1Attack(fuerza, resistencia);
+    }
     public bool TiradaDeExito()
     {
         int tirada = Random.Range(0, 10); // Genera un n�mero aleatorio entre 0 y 9 (1D10)
