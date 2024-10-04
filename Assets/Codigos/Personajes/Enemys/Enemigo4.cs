@@ -11,6 +11,10 @@ public class Enemigo4 : MonoBehaviour
     public int fuerza;
     public int resistencia;
 
+    void Awake(){
+        combate = GameObject.Find("CombateManager").GetComponent<CombateManager>();
+        escenaManager = GameObject.Find("EsceneManager").GetComponent<EscenaManager>();
+    }
     public bool TiradaDeExito()
     {
         int tirada = Random.Range(0, 10); // Genera un n?mero aleatorio entre 0 y 9 (1D10)

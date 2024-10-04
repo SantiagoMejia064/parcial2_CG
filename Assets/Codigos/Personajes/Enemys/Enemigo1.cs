@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +17,14 @@ public class Enemigo1 : MonoBehaviour
         TiradaDeExito();
         TiradaAtaque();
     }
+
+    void Awake(){
+        combate = GameObject.Find("CombateManager").GetComponent<CombateManager>();
+        escenaManager = GameObject.Find("EsceneManager").GetComponent<EscenaManager>();
+    }
     public bool TiradaDeExito()
     {
-        int tirada = Random.Range(0, 10); // Genera un n?mero aleatorio entre 0 y 9 (1D10)
+        int tirada = UnityEngine.Random.Range(0, 10); // Genera un n?mero aleatorio entre 0 y 9 (1D10)
         if (tirada <= 3)
         {
             Debug.Log(tirada + "Pifia en la tirada de exito, no se realiza accion.");
@@ -31,8 +37,8 @@ public class Enemigo1 : MonoBehaviour
         {
             Debug.Log(tirada + "Tirada exitosa, el ataque continua.");
 
-            int tirada1 = Random.Range(0, 10);
-            int tirada2 = Random.Range(0, 10);
+            int tirada1 = UnityEngine.Random.Range(0, 10);
+            int tirada2 = UnityEngine.Random.Range(0, 10);
 
             int valorAtaque = int.Parse(tirada1.ToString() + tirada2.ToString());
 
@@ -66,7 +72,7 @@ public class Enemigo1 : MonoBehaviour
     {
         if (TiradaDeExito())
         {
-            int d6 = Random.Range(0, 6);
+            int d6 = UnityEngine.Random.Range(0, 6);
 
             int valorAtaque = d6;
             Debug.Log("El personaje hizo el siguiente da�o: " + d6 +  " = " + valorAtaque);
@@ -106,3 +112,5 @@ public class Enemigo1 : MonoBehaviour
         }
     }
 }
+
+

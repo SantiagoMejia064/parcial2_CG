@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7825638531615257602}
   - component: {fileID: 6273524625023114502}
-  - component: {fileID: 5947439037890087804}
   - component: {fileID: 2285242877908958615}
   - component: {fileID: -5753386753659819680}
   - component: {fileID: 394050294628830338}
+  - component: {fileID: 282135471916016965}
   m_Layer: 0
   m_Name: Enemigo2
   m_TagString: Untagged
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5947439037890087804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8187245275504483842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f825da4bc0934540aa532cb790bf481, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combate: {fileID: 0}
-  escenaManager: {fileID: 0}
-  fuerza: 0
-  resistencia: 0
 --- !u!95 &2285242877908958615
 Animator:
   serializedVersion: 5
@@ -197,3 +181,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33, y: 0.45}
   m_EdgeRadius: 0
+--- !u!114 &282135471916016965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187245275504483842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47528b74d94e2b44a49d1ed6ed8ee60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combate: {fileID: 0}
+  escenaManager: {fileID: 0}
+  fuerza: 0
+  resistencia: 0
