@@ -55,6 +55,7 @@ public class CombateManager : MonoBehaviour
         StartCoroutine(eleccionAtaque());
     }
     */
+
     void Awake(){
         if(GameManager.Instance != null)
         {
