@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public int enemigoEnColision;
 
-    public Transform punto;
-
     public int cantLlaveMorada = 0;
     //public Text llavesMoradas;
     private void Awake()

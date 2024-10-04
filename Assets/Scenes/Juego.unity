@@ -133,19 +133,19 @@ PrefabInstance:
     - target: {fileID: -2543011223368365369, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
       propertyPath: combate
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 702119435}
     - target: {fileID: -2543011223368365369, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 782218985}
     - target: {fileID: -2543011223368365369, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
       propertyPath: escenaManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1220102915}
     - target: {fileID: 5316205989050561682, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
       propertyPath: combate
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 702119435}
     - target: {fileID: 7168817509697974596, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma 3
@@ -316,8 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47528b74d94e2b44a49d1ed6ed8ee60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combate: {fileID: 0}
-  escenaManager: {fileID: 0}
+  combate: {fileID: 702119435}
+  escenaManager: {fileID: 1220102915}
   salud: 0
   fuerza: 0
   resistencia: 0
@@ -1207,19 +1207,19 @@ PrefabInstance:
     - target: {fileID: -2543011223368365369, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
       propertyPath: combate
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 702119435}
     - target: {fileID: -2543011223368365369, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 782218985}
     - target: {fileID: -2543011223368365369, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
       propertyPath: escenaManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1220102915}
     - target: {fileID: 6330294150294607043, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
       propertyPath: combate
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 702119435}
     - target: {fileID: 7168817509697974596, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma 2
@@ -1305,19 +1305,19 @@ PrefabInstance:
     - target: {fileID: -2543011223368365369, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: combate
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 702119435}
     - target: {fileID: -2543011223368365369, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 782218985}
     - target: {fileID: -2543011223368365369, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: escenaManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1220102915}
     - target: {fileID: 1049620758259136767, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: combate
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 702119435}
     - target: {fileID: 7168817509697974596, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma 1
@@ -1682,8 +1682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e930c5ba272dc846b6ecf7b8dfba0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combate: {fileID: 0}
-  escenaManager: {fileID: 0}
+  combate: {fileID: 702119435}
+  escenaManager: {fileID: 1220102915}
   salud: 0
   fuerza: 0
   resistencia: 0
@@ -2214,8 +2214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d113a7a591b494096cdd12634726ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combate: {fileID: 0}
-  escenaManager: {fileID: 0}
+  combate: {fileID: 702119435}
+  escenaManager: {fileID: 1220102915}
   salud: 0
   fuerza: 0
   resistencia: 0
@@ -2275,19 +2275,19 @@ PrefabInstance:
     - target: {fileID: -2543011223368365369, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: combate
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 702119435}
     - target: {fileID: -2543011223368365369, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 782218985}
     - target: {fileID: -2543011223368365369, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: escenaManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1220102915}
     - target: {fileID: 3517043539199423108, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: combate
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 702119435}
     - target: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma
@@ -33994,8 +33994,8 @@ SceneRoots:
   - {fileID: 263928516}
   - {fileID: 1507639278}
   - {fileID: 1220102916}
-  - {fileID: 702119436}
   - {fileID: 782218986}
+  - {fileID: 702119436}
   - {fileID: 793995420}
   - {fileID: 190540045}
   - {fileID: 1536098133}

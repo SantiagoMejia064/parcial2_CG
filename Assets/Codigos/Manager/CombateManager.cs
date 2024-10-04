@@ -23,14 +23,12 @@ public class CombateManager : MonoBehaviour
     public GameObject enemigo4;
     public bool playerAttacking;
     public bool enemyAttacking;
-    public GameManager gameManager;
+    //public GameManager gameManager;
 
     // Referencia al panel de selecci�n de personajes
     public GameObject panelSeleccionPersonajes;
 
     void Awake(){
-
-        
         //Debug.Log("Colisionó con enemigo #" + gameManager.enemigoEnColision);
         switch(GameManager.Instance.enemigoEnColision){
             case 1:

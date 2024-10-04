@@ -131,6 +131,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2543011223368365369, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
+      propertyPath: combate
+      value: 
+      objectReference: {fileID: 1317830185}
+    - target: {fileID: -2543011223368365369, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1896152267}
@@ -150,6 +154,10 @@ PrefabInstance:
       propertyPath: escenaManager
       value: 
       objectReference: {fileID: 2002384596}
+    - target: {fileID: 6330294150294607043, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
+      propertyPath: combate
+      value: 
+      objectReference: {fileID: 1317830185}
     - target: {fileID: 7168817509697974596, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma 2
@@ -278,6 +286,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2543011223368365369, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+      propertyPath: combate
+      value: 
+      objectReference: {fileID: 1317830185}
+    - target: {fileID: -2543011223368365369, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1896152267}
@@ -301,6 +313,10 @@ PrefabInstance:
       propertyPath: escenaManager
       value: 
       objectReference: {fileID: 2002384596}
+    - target: {fileID: 3517043539199423108, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+      propertyPath: combate
+      value: 
+      objectReference: {fileID: 1317830185}
     - target: {fileID: 3792625917963498796, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_SortingOrder
       value: 7
@@ -602,6 +618,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2543011223368365369, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
+      propertyPath: combate
+      value: 
+      objectReference: {fileID: 1317830185}
+    - target: {fileID: -2543011223368365369, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1896152267}
@@ -625,6 +645,10 @@ PrefabInstance:
       propertyPath: escenaManager
       value: 
       objectReference: {fileID: 2002384596}
+    - target: {fileID: 1049620758259136767, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
+      propertyPath: combate
+      value: 
+      objectReference: {fileID: 1317830185}
     - target: {fileID: 7168817509697974596, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma 1
@@ -6494,6 +6518,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2543011223368365369, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
+      propertyPath: combate
+      value: 
+      objectReference: {fileID: 1317830185}
+    - target: {fileID: -2543011223368365369, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1896152267}
@@ -6517,6 +6545,10 @@ PrefabInstance:
       propertyPath: escenaManager
       value: 
       objectReference: {fileID: 2002384596}
+    - target: {fileID: 5316205989050561682, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
+      propertyPath: combate
+      value: 
+      objectReference: {fileID: 1317830185}
     - target: {fileID: 7168817509697974596, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
       propertyPath: m_Name
       value: PlayerPlataforma 3
@@ -6598,6 +6630,69 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
+--- !u!1 &1317830184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317830186}
+  - component: {fileID: 1317830185}
+  m_Layer: 0
+  m_Name: CombateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1317830185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317830184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c666a6794c797b241b99cb0ffb3a39fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personaje1: {fileID: 1896152267}
+  personaje2: {fileID: 1335818053}
+  personaje3: {fileID: 1973296730}
+  personaje4: {fileID: 372321548}
+  P1Attack1: {fileID: 0}
+  P1Attack2: {fileID: 0}
+  P2Attack1: {fileID: 0}
+  P2Attack2: {fileID: 0}
+  P2Attack3: {fileID: 0}
+  P3Attack1: {fileID: 0}
+  P4Attack1: {fileID: 0}
+  enemigo1: {fileID: 0}
+  enemigo2: {fileID: 0}
+  enemigo3: {fileID: 0}
+  enemigo4: {fileID: 0}
+  playerAttacking: 0
+  enemyAttacking: 0
+  gameManager: {fileID: 1443052343}
+  panelSeleccionPersonajes: {fileID: 0}
+--- !u!4 &1317830186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317830184}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.10983381, y: 3.8087978, z: 1.1162117}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1335818053 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7168817509697974596, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
@@ -16905,6 +17000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafd2695fddc0674c9c6b91621694a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemigoEnColision: 0
   punto: {fileID: 0}
   cantLlaveMorada: 0
 --- !u!4 &1443052344
@@ -18790,7 +18886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21dc830570193a448e702feecbaea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1443052343}
   punto: {fileID: 0}
 --- !u!4 &2002384597
 Transform:
@@ -18831,3 +18926,4 @@ SceneRoots:
   - {fileID: 1788308020}
   - {fileID: 1443052344}
   - {fileID: 2002384597}
+  - {fileID: 1317830186}
