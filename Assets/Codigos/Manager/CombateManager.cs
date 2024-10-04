@@ -29,8 +29,9 @@ public class CombateManager : MonoBehaviour
     public GameObject panelSeleccionPersonajes;
 
     void Awake(){
-        //Debug.Log("Colisionó con enemigo #" + gameManager.enemigoEnColision);
-        switch(GameManager.Instance.enemigoEnColision){
+        if(GameManager.Instance != null)
+        {
+            switch(GameManager.Instance.enemigoEnColision){
             case 1:
                 enemigo1.SetActive(true);
                 break;
@@ -47,7 +48,9 @@ public class CombateManager : MonoBehaviour
                 Debug.LogWarning("indice de enemigo invalido");
                 break;
 
+            }
         }
+        //Debug.Log("Colisionó con enemigo #" + gameManager.enemigoEnColision);
     }
 
     // M�todo que selecciona el personaje basado en el �ndice (del bot�n presionado)
