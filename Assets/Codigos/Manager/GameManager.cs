@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,15 +10,25 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public int enemigoEnColision;
     [SerializeField] public GameObject[] enemigos;
-    private int actEnemigos;
+    [SerializeField] public GameObject[] posEnemigos;
 
     public int cantLlaveMorada = 0;
     //public Text llavesMoradas;
 
 
     public void SetEnemigoAzar(){
-        for (int i = 0; i < enemigos.Length; i++)
+        int posicionEnemigos = Random.Range(1,posEnemigos.Length);
+        
+
+        Debug.Log(posicionEnemigos);
+        for (int i = 0; i < posicionEnemigos; i++)
         {
+            int seleccionEnemigos = Random.Range(1, enemigos.Length);
+
+            Debug.Log("Entré");
+            Instantiate(enemigos[seleccionEnemigos], posEnemigos[i].transform.position, posEnemigos[i].transform.rotation);
+            
+            /*
             actEnemigos = Random.Range(0, 2);
             if (actEnemigos == 1)
             {
@@ -25,7 +36,7 @@ public class GameManager : MonoBehaviour
                 enemigos[i].SetActive(true);
             }else{
                 enemigos[i].SetActive(false);   
-            }
+            }*/
         }
     }
     private void Awake()
@@ -39,6 +50,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+
     }
 
     public void SetLlavesMoradas()

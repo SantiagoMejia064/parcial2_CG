@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 public class EscenaManager : MonoBehaviour
 {
 
-    public static EscenaManager instance { get; private set; }
-    public GameManager gameManager;
+    //public static EscenaManager instance { get; private set; }
+    
     private void Awake()
-    {
-        if (instance != null && instance != this)
+    {/*if (instance != null && instance != this)
         {
             Destroy(this);
         }
@@ -18,13 +17,15 @@ public class EscenaManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-        }
+        }*/
+
+        inicioJuego();
     }
     
     public void inicioJuego(){
-        SceneManager.LoadScene("Juego", LoadSceneMode.Single);
+        //SceneManager.LoadScene("Juego", LoadSceneMode.Single);
         //Debug.Log("Tiene " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
-        gameManager.SetEnemigoAzar();
+        GameManager.Instance.SetEnemigoAzar();
         
     }
 
