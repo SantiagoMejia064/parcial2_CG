@@ -435,7 +435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafd2695fddc0674c9c6b91621694a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punto: {fileID: 0}
+  enemigoEnColision: 0
+  enemigos: []
   cantLlaveMorada: 0
 --- !u!4 &620299595
 Transform:
@@ -690,7 +691,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 620299594}
-  punto: {fileID: 0}
 --- !u!4 &812515013
 Transform:
   m_ObjectHideFlags: 0
