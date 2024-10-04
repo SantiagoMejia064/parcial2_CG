@@ -10,7 +10,6 @@ public class Player1Attack : MonoBehaviour
 
     public GameObject Player;
     public CombateManager combate;
-    public Enemigo1 enemigo1;
 
     //public EscenaManager escenaManager;
 
@@ -84,7 +83,7 @@ public class Player1Attack : MonoBehaviour
             int valorAtaque = d6A + d6B;
             Debug.Log("El personaje hizo el siguiente daño: " + d6A + "+" + d6B + " = " + valorAtaque);
 
-            enemigo1.GetDamage(valorAtaque);
+            //Enemigo1.getDamage(valorAtaque);
 
             combate.playerAttacking = false;
             combate.enemyAttacking = true;    
