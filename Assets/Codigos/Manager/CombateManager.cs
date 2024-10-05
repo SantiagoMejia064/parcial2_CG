@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CombateManager : MonoBehaviour
 {
@@ -32,29 +33,26 @@ public class CombateManager : MonoBehaviour
 
     // Referencia al panel de selecci�n de personajes
     public GameObject panelSeleccionPersonajes;
-
-
-   /* private Peleador [] peleadores;
-    private int peleadorindex;
-
-    public void Start()
-    {
-        peleadores = new Peleador[4];
-        peleadores[0] = personaje1.GetComponent<Peleador>();
-        peleadores[1] = personaje2.GetComponent<Peleador>();
-        peleadores[2] = personaje3.GetComponent<Peleador>();
-        peleadores[3] = personaje4.GetComponent<Peleador>();
-        peleadorindex = 0;
-        peleadores[peleadorindex].InitTurn();
-    }*/
-    /*
+   
     void Start()
     {
-        //playerAttacking = true;
-        //enemyAttacking = false;
-        StartCoroutine(eleccionAtaque());
+        if (SceneManager.GetActiveScene().name == "Combate")
+        {
+            playerAttacking = true; 
+            enemyAttacking = false;  
+            StartCoroutine(eleccionAtaque(playerAttacking));
+            StartCoroutine(eleccionAtaque(enemyAttacking));
+
+            Debug.Log("Iniciando combate");
+        }
+        else
+        {
+            playerAttacking = false;
+            enemyAttacking = false;
+            Debug.Log("No es la escena para que estos manes combatan");
+        }
     }
-    */
+ 
 
     void Awake(){
         if(GameManager.Instance != null)
@@ -129,25 +127,22 @@ public class CombateManager : MonoBehaviour
         panelSeleccionPersonajes.SetActive(false);
     }
 
-    IEnumerator eleccionAtaque(){
-        while (true)
+    IEnumerator eleccionAtaque(bool player){
+        while (player)
         {
             if (playerAttacking)
             {
-                // Lógica para el turno del jugador
                 Debug.Log("Turno del jugador");
-                // Realiza el ataque del jugador aquí
-                // Después de que el jugador termine su ataque, cambiar al turno del enemigo
-                yield return new WaitForSeconds(2f);  // Espera un tiempo para simular el ataque
-                playerAttacking = false;
+                yield return new WaitForSeconds(2f);  // Esperar TIEMPO
                 enemyAttacking = true;
+                playerAttacking = false;
             }
             else if (enemyAttacking)
             {
                 // Lógica para el turno del enemigo
                 Debug.Log("Turno del enemigo");
-                
-                switch(GameManager.Instance.enemigoEnColision){
+
+                switch (GameManager.Instance.enemigoEnColision) {
                     case 1:
                         enemigoUNO.TiradaAtaque();  // El enemigo realiza su ataque
                         break;
@@ -164,10 +159,48 @@ public class CombateManager : MonoBehaviour
                         Debug.LogWarning("indice de enemigo invalido");
                         break;
                 }
-                
+                yield return new WaitForSeconds(2f);
+                playerAttacking = true;
+                enemyAttacking = false;
+            } 
+        }
+    }
 
-                // Después del ataque del enemigo, cambiar el turno al jugador
-                yield return new WaitForSeconds(2f);  // Espera un tiempo para simular el ataque
+    IEnumerator eleccionAtaqueEnemigo(bool enemigo)
+    {
+        while (enemigo)
+        {
+            if (playerAttacking)
+            {
+                Debug.Log("Turno del jugador");
+                yield return new WaitForSeconds(2f);  // Esperar TIEMPO
+                enemyAttacking = true;
+                playerAttacking = false;
+            }
+            else if (enemyAttacking)
+            {
+                // Lógica para el turno del enemigo
+                Debug.Log("Turno del enemigo");
+
+                switch (GameManager.Instance.enemigoEnColision)
+                {
+                    case 1:
+                        enemigoUNO.TiradaAtaque();  // El enemigo realiza su ataque
+                        break;
+                    case 2:
+                        enemigoDOS.TiradaAtaque();  // El enemigo realiza su ataque
+                        break;
+                    case 3:
+                        enemigoTRES.TiradaAtaque();  // El enemigo realiza su ataque
+                        break;
+                    case 4:
+                        enemigoCUATRO.TiradaAtaque();  // El enemigo realiza su ataque
+                        break;
+                    default:
+                        Debug.LogWarning("indice de enemigo invalido");
+                        break;
+                }
+                yield return new WaitForSeconds(2f);
                 playerAttacking = true;
                 enemyAttacking = false;
             }
