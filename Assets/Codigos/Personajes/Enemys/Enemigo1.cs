@@ -13,6 +13,10 @@ public class Enemigo1 : MonoBehaviour
     public int fuerza;
     public int resistencia;
 
+    public void Update(){
+        
+    }
+
     public void atacar(){
         TiradaDeExito();
         TiradaAtaque();

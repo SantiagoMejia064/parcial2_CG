@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 434527758139034379}
   - component: {fileID: -6367073899842464442}
   - component: {fileID: 3555267980554490644}
+  - component: {fileID: 1790050201243876290}
   m_Layer: 0
   m_Name: Enemigo4
   m_TagString: Untagged
@@ -175,3 +176,24 @@ MonoBehaviour:
   escenaManager: {fileID: 0}
   fuerza: 0
   resistencia: 0
+--- !u!95 &1790050201243876290
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417605483078959682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b99743f0b60f92b4088499246cb59c42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

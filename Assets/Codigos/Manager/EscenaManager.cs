@@ -18,12 +18,12 @@ public class EscenaManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }*/
+        //inicioJuego();
 
-        inicioJuego();
     }
     
     public void inicioJuego(){
-        //SceneManager.LoadScene("Juego", LoadSceneMode.Single);
+        SceneManager.LoadScene("Juego", LoadSceneMode.Single);
         //Debug.Log("Tiene " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
         GameManager.Instance.SetEnemigoAzar();
         
