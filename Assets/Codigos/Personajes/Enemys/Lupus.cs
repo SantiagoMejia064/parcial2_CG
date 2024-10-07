@@ -52,7 +52,6 @@ public class Lupus : MonoBehaviour
             int valorAtaque = d8 + d4;
             Debug.Log("El personaje hizo el siguiente daño = " + valorAtaque);
 
-
             combate.playerAttacking = false;
             combate.enemyAttacking = true;
         }

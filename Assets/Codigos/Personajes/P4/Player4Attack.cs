@@ -37,7 +37,7 @@ public class Player4Attack : MonoBehaviour
 
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
-                Debug.Log("Pifia en el ataque de personaje 4, no se hace da�o.");
+                Debug.Log("Pifia en el ataque de personaje 4, no se hace daño.");
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
