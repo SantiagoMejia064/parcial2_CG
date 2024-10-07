@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-
+/*
     public GameObject item;
     public int ID;
     public string type;
@@ -12,4 +12,5 @@ public class Slot : MonoBehaviour
 
     public bool empty;
     public Sprite icon;
+    */
 }
