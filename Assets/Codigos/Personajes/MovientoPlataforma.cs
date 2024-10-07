@@ -178,8 +178,5 @@ public class MovimientoPlataforma : MonoBehaviour
         {
             transform.parent = null;
         }
-
-
     }
-    
 }

@@ -8,17 +8,11 @@ public class EscenaManager : MonoBehaviour
 {
     public float tiempoEsc;
     public bool aparecerEnemigo = true;
-    [SerializeField] private float time;    
-    private void Awake()
-    {
-        //inicioJuego();
-    }
-   
+    [SerializeField] private float time;
     
     public void inicioJuego(){
         SceneManager.LoadScene("Juego", LoadSceneMode.Single);
         //Debug.Log("Tiene " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
-        //GameManager.Instance.SetEnemigoAzar();
     }
 
     public void finJuego(){
