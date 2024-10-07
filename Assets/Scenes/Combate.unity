@@ -217,6 +217,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 16763638}
+        m_TargetAssemblyTypeName: CombateManager, Assembly-CSharp
+        m_MethodName: PlayerAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &15067707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,13 +1095,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 16763637}
-        m_TargetAssemblyTypeName: Player1Attack, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 16763638}
+        m_TargetAssemblyTypeName: CombateManager, Assembly-CSharp
+        m_MethodName: PlayerAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1785,7 +1797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21dc830570193a448e702feecbaea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  tiempoEsc: 0
+  aparecerEnemigo: 1
+  time: 0
 --- !u!4 &949957484
 Transform:
   m_ObjectHideFlags: 0
@@ -2499,7 +2513,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigoEnColision: 0
-  enemigos: []
+  inJuego: 0
+  inBosque: 0
+  inBoss: 0
   cantLlaveMorada: 0
 --- !u!4 &1295921854
 Transform:

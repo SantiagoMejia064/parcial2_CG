@@ -40,8 +40,6 @@ public class CombateManager : MonoBehaviour
         {
             playerAttacking = true; 
             enemyAttacking = false;  
-            StartCoroutine(eleccionAtaque(playerAttacking));
-            StartCoroutine(eleccionAtaque(enemyAttacking));
 
             Debug.Log("Iniciando combate");
         }
@@ -127,83 +125,70 @@ public class CombateManager : MonoBehaviour
         panelSeleccionPersonajes.SetActive(false);
     }
 
-    IEnumerator eleccionAtaque(bool player){
-        while (player)
-        {
-            if (playerAttacking)
-            {
-                Debug.Log("Turno del jugador");
-                yield return new WaitForSeconds(2f);  // Esperar TIEMPO
-                enemyAttacking = true;
-                playerAttacking = false;
-            }
-            else if (enemyAttacking)
-            {
-                // Lógica para el turno del enemigo
-                Debug.Log("Turno del enemigo");
-
-                switch (GameManager.Instance.enemigoEnColision) {
-                    case 1:
-                        enemigoUNO.TiradaAtaque();  // El enemigo realiza su ataque
-                        break;
-                    case 2:
-                        enemigoDOS.TiradaAtaque();  // El enemigo realiza su ataque
-                        break;
-                    case 3:
-                        enemigoTRES.TiradaAtaque();  // El enemigo realiza su ataque
-                        break;
-                    case 4:
-                        enemigoCUATRO.TiradaAtaque();  // El enemigo realiza su ataque
-                        break;
-                    default:
-                        Debug.LogWarning("indice de enemigo invalido");
-                        break;
-                }
-                yield return new WaitForSeconds(2f);
-                playerAttacking = true;
-                enemyAttacking = false;
-            } 
-        }
-    }
-
-    IEnumerator eleccionAtaqueEnemigo(bool enemigo)
+    public void PlayerAttack()
     {
-        while (enemigo)
+        if (playerAttacking)
         {
-            if (playerAttacking)
-            {
-                Debug.Log("Turno del jugador");
-                yield return new WaitForSeconds(2f);  // Esperar TIEMPO
-                enemyAttacking = true;
-                playerAttacking = false;
-            }
-            else if (enemyAttacking)
-            {
-                // Lógica para el turno del enemigo
-                Debug.Log("Turno del enemigo");
+            playerAttacking = false;
+            enemyAttacking = true;
+            Debug.Log("El jugador está atacando.");
 
-                switch (GameManager.Instance.enemigoEnColision)
-                {
-                    case 1:
-                        enemigoUNO.TiradaAtaque();  // El enemigo realiza su ataque
-                        break;
-                    case 2:
-                        enemigoDOS.TiradaAtaque();  // El enemigo realiza su ataque
-                        break;
-                    case 3:
-                        enemigoTRES.TiradaAtaque();  // El enemigo realiza su ataque
-                        break;
-                    case 4:
-                        enemigoCUATRO.TiradaAtaque();  // El enemigo realiza su ataque
-                        break;
-                    default:
-                        Debug.LogWarning("indice de enemigo invalido");
-                        break;
-                }
-                yield return new WaitForSeconds(2f);
-                playerAttacking = true;
-                enemyAttacking = false;
-            }
+            TurnoEnemigo();
         }
     }
+
+
+    public void TurnoEnemigo()
+    {
+        if (!playerAttacking)  
+        {
+            playerAttacking = false;
+            enemyAttacking = true;
+            Debug.Log("Cambiando turno al enemigo.");
+
+            IniciarAtaqueEnemigo();
+        }
+    }
+
+
+    public void IniciarAtaqueEnemigo()
+    {
+        if (enemyAttacking)
+        {
+            Debug.Log("Turno del enemigo.");
+            Debug.Log("Enemigo en colision: " + GameManager.Instance.enemigoEnColision);
+
+            switch (GameManager.Instance.enemigoEnColision)
+            {
+                case 1:
+                    Debug.Log("Enemigo 1 está atacando.");
+                    enemigoUNO.atacar();
+                    break;
+                case 2:
+                    Debug.Log("Enemigo 2 está atacando.");
+                    enemigoDOS.TiradaAtaque();
+                    break;
+                case 3:
+                    Debug.Log("Enemigo 3 está atacando.");
+                    enemigoTRES.TiradaAtaque();
+                    break;
+                case 4:
+                    
+                    Debug.Log("Enemigo 4 está atacando.");
+                    enemigoCUATRO.TiradaAtaque();
+                    break;
+            }
+
+            TurnoJugador();
+        }
+    }
+
+    // Método para cambiar el turno de vuelta al jugador
+    public void TurnoJugador()
+    {
+        enemyAttacking = false;
+        playerAttacking = true;
+        Debug.Log("Turno del jugador de nuevo.");
+    }
+
 }

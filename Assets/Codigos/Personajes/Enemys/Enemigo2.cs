@@ -12,6 +12,12 @@ public class Enemigo2 : MonoBehaviour
     public int fuerza;
     public int resistencia;
 
+    
+    public void atacar(){
+        TiradaDeExito();
+        TiradaAtaque();
+    }
+    
     void Awake(){
         combate = GameObject.Find("CombateManager").GetComponent<CombateManager>();
         escenaManager = GameObject.Find("EsceneManager").GetComponent<EscenaManager>();
