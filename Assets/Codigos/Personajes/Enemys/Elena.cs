@@ -6,6 +6,7 @@ public class Elena : MonoBehaviour
 {
         public CombateManager combate;
     public EscenaManager escenaManager;
+    private int valorAtaque;
 
     [Header("Estadisticas")]
     public int fuerza;
@@ -41,19 +42,16 @@ public class Elena : MonoBehaviour
         }
 
     }
-
-    public void TiradaAtaque()
+    
+    public int TiradaAtaque()
     {
         if (TiradaDeExito())
         {
             int d8 = UnityEngine.Random.Range(0, 9);
             
-            int valorAtaque = d8;
-            Debug.Log("El personaje hizo el siguiente daño = " + valorAtaque);
-
-            combate.playerAttacking = false;
-            combate.enemyAttacking = true;
+            valorAtaque = d8;
         }
+        return valorAtaque;
     }
 
     public void GetDamage(int dmg)
