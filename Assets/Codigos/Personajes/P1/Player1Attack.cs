@@ -20,6 +20,7 @@ public class Player1Attack : MonoBehaviour
     public int fuerza;
     public int resistencia;
 
+    public Animator anim;
 
     public Player1Attack(int fuerza, int resistencia){
         this.fuerza = fuerza;
@@ -74,6 +75,7 @@ public class Player1Attack : MonoBehaviour
             }
         }
     }
+
 
     public void TiradaAtaque()
     {
