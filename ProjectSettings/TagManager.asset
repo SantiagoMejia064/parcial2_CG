@@ -12,6 +12,7 @@ TagManager:
   - Enemigo2
   - Enemigo3
   - Enemigo4
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -4,26 +4,12 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-/*
     public int ID;
     public string type;
-    public string description;
-    public Sprite icono;
-
+    public string descripcion;
+    public Sprite icon;
 
     [HideInInspector]
     public bool pickedUp;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }*/
 }

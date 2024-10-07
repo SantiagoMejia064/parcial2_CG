@@ -5,43 +5,43 @@ using UnityEngine;
 
 public class Inventario : MonoBehaviour
 {
-/*
-    private bool inventoryEnabled;
+    public bool inventoryEnabled;
 
     public GameObject inventory;
 
     private int allSlots;
 
-    private int enabledSlot;
+    private int enabledSlots;
 
-    private GameObject[] slots;
+    private GameObject[] slot;
 
     public GameObject slotHolder;
 
-
-    void Start()
+    private void Start()
     {
         allSlots = slotHolder.transform.childCount;
 
-        slots = new GameObject[allSlots];
+        slot = new GameObject[allSlots];
 
         for(int i = 0; i < allSlots; i++)
         {
-            slots[i] = slotHolder.transform.GetChild(i).gameObject;
+            slot[i] = slotHolder.transform.GetChild(i).gameObject;
 
-
+            if(slot[i].GetComponent<Slot>().item == null)
+            {
+                slot[i].GetComponent<Slot>().empty = true;
+            }
         }
     }
 
-   
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
             inventoryEnabled = !inventoryEnabled;
         }
 
-        if (inventoryEnabled == true)
+        if (inventoryEnabled)
         {
             inventory.SetActive(true);
         }
@@ -51,39 +51,44 @@ public class Inventario : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
         if(other.tag == "Item")
         {
-            GameObject itempickedUp = other.GameObject;
+            GameObject itemPickedUp = other.gameObject;
 
-            Item item = itempickedUp.GetComponent<Item>();
+            Item item = itemPickedUp.GetComponent<Item>();
 
-            AddItem(itempickedUp, item.ID, item.type, item.description, item.icon);
+            AddItem(itemPickedUp, item.ID, item.type, item.descripcion, item.icon);
         }
     }
 
-    public void AddItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon)
+    public void AddItem(GameObject itemObject, int itemID, string itemType, string itemDescripcion, Sprite itemIcon)
     {
-        for( int i = 0;i < allSlots; i++)
+        for (int i = 0; i < allSlots; i++)
         {
-            if (slots[i].GetComponent<Slot>().empty)
+            if (slot[i].GetComponent<Slot>().empty)
             {
+                // Marca el objeto como recogido
                 itemObject.GetComponent<Item>().pickedUp = true;
 
-                slots[i].GetComponent<Slot>().item = itemObject;
-                slots[i].GetComponent<Slot>().ID = itemID;
-                slots[i].GetComponent<Slot>().type = itemType;
-                slots[i].GetComponent<Slot>().description = itemDescription;
-                slots[i].GetComponent<Slot>().icon = itemIcon;
+                // Asigna el objeto al slot
+                slot[i].GetComponent<Slot>().item = itemObject;
+                slot[i].GetComponent<Slot>().ID = itemID;
+                slot[i].GetComponent<Slot>().type = itemType;
+                slot[i].GetComponent<Slot>().descripcion = itemDescripcion;
+                slot[i].GetComponent<Slot>().icon = itemIcon;
 
-                itemObject.transform.parent = slots[i].transform;
-                itemObject.SetActive(true);
+                itemObject.transform.parent = slot[i].transform;
+                itemObject.SetActive(false);
 
-                slots[i].GetComponent<Slot>().empty = false;
+                slot[i].GetComponent<Slot>().UpdateSlot();
+
+                slot[i].GetComponent<Slot>().empty = false;
+
+                break;
             }
         }
     }
-    */
 }
