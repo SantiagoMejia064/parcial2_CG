@@ -1,35 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EscenaManager : MonoBehaviour
 {
-
-    //public static EscenaManager instance { get; private set; }
-    
+    public float tiempoEsc;
+    public bool aparecerEnemigo = true;
+    [SerializeField] private float time;    
     private void Awake()
-    {/*if (instance != null && instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }*/
+    {
         //inicioJuego();
-
     }
+   
     
     public void inicioJuego(){
         SceneManager.LoadScene("Juego", LoadSceneMode.Single);
         //Debug.Log("Tiene " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
-        Invoke("SetEnemigo", 1f);
-    }
-
-    public void SetEnemigos(){
-        GameManager.Instance.SetEnemigoAzar();
+        //GameManager.Instance.SetEnemigoAzar();
     }
 
     public void finJuego(){
