@@ -12303,7 +12303,7 @@ GameObject:
   - component: {fileID: 1933365895}
   - component: {fileID: 1933365894}
   m_Layer: 0
-  m_Name: Enemigo
+  m_Name: Lupus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

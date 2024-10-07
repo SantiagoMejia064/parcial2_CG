@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class Player1Attack : MonoBehaviour
 {
-    
-    //public static PlayerManager Instance { get; private set; }
 
     public GameObject Player;
     public CombateManager combate;
@@ -86,7 +84,7 @@ public class Player1Attack : MonoBehaviour
 
             int valorAtaque = d10 + d4;
             Debug.Log("El personaje hizo el siguiente daño: " + d10 + "+" + d4 + " = " + valorAtaque);
-
+            Debug.Log("Enemigo en colision: " + GameManager.Instance.enemigoEnColision);
             switch(GameManager.Instance.enemigoEnColision){
                 case 1:
                     enemigo1.GetDamage(valorAtaque);
@@ -105,8 +103,6 @@ public class Player1Attack : MonoBehaviour
                     break;
             }
 
-            //Enemigo1.getDamage(valorAtaque);
-
             combate.playerAttacking = false;
             combate.enemyAttacking = true;    
         }
@@ -122,9 +118,23 @@ public class Player1Attack : MonoBehaviour
 
             int valorAtaque = d6A + d6B;
             Debug.Log("El personaje hizo el siguiente daño: " + d6A + "+" + d6B + " = " + valorAtaque);
-
-            //Enemigo1.getDamage(valorAtaque);
-
+            switch(GameManager.Instance.enemigoEnColision){
+                case 1:
+                    enemigo1.GetDamage(valorAtaque);
+                    break;
+                case 2:
+                    enemigo2.GetDamage(valorAtaque);
+                    break;
+                case 3:
+                    enemigo3.GetDamage(valorAtaque);
+                    break;
+                case 4:
+                    enemigo4.GetDamage(valorAtaque);
+                    break;
+                default:
+                    Debug.LogWarning("indice de enemigo invalido");
+                    break;
+            }
             combate.playerAttacking = false;
             combate.enemyAttacking = true;    
         }
