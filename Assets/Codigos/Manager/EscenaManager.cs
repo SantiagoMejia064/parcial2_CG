@@ -25,8 +25,11 @@ public class EscenaManager : MonoBehaviour
     public void inicioJuego(){
         SceneManager.LoadScene("Juego", LoadSceneMode.Single);
         //Debug.Log("Tiene " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
+        Invoke("SetEnemigo", 1f);
+    }
+
+    public void SetEnemigos(){
         GameManager.Instance.SetEnemigoAzar();
-        
     }
 
     public void finJuego(){

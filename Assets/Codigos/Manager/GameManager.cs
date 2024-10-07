@@ -15,33 +15,29 @@ public class GameManager : MonoBehaviour
 
     public int cantLlaveMorada = 0;
     //public Text llavesMoradas;
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
+    private void Awake(){
+        if (Instance != null && Instance != this){
             Destroy(this);
         }
-        else
-        {
+        else{
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
 
     public void SetEnemigoAzar(){
-        //if(SceneManager.GetActiveScene().name == "Juego" || SceneManager.GetActiveScene().name == "Town"){  
-            Debug.Log("Enemigos en la escena: " + enemigos.Length);
-            Debug.Log("Posiciones en la escena: " + posEnemigos.Length);
+
+        Debug.Log("Enemigos en la escena: " + enemigos.Length);
+        Debug.Log("Posiciones en la escena: " + posEnemigos.Length);
             
-            int posicionEnemigos = Random.Range(1,posEnemigos.Length);
-            for (int i = 0; i < posicionEnemigos; i++)
-            {
-                int seleccionEnemigos = Random.Range(1, enemigos.Length);
-                if(null != enemigos[seleccionEnemigos]){
+        int posicionEnemigos = Random.Range(1,posEnemigos.Length);
+        for (int i = 0; i < posicionEnemigos; i++)
+        {
+            int seleccionEnemigos = Random.Range(1, enemigos.Length);
+            if(null != enemigos[seleccionEnemigos]){
                     Instantiate(enemigos[seleccionEnemigos], posEnemigos[i].transform.position, posEnemigos[i].transform.rotation);
-                }
             }
-        //}
+        }
     }
 
     public void SetLlavesMoradas()

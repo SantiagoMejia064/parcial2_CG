@@ -53,6 +53,7 @@ public class Inventario : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        /*
         if(other.tag == "Item")
         {
             GameObject itempickedUp = other.GameObject;
@@ -60,7 +61,7 @@ public class Inventario : MonoBehaviour
             Item item = itempickedUp.GetComponent<Item>();
 
             AddItem(itempickedUp, item.ID, item.type, item.description, item.icon);
-        }
+        }*/
     }
 
     public void AddItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon)
@@ -74,7 +75,7 @@ public class Inventario : MonoBehaviour
                 slots[i].GetComponent<Slot>().item = itemObject;
                 slots[i].GetComponent<Slot>().ID = itemID;
                 slots[i].GetComponent<Slot>().type = itemType;
-                slots[i].GetComponent<Slot>().description = itemDescription;
+               // slots[i].GetComponent<Slot>().description = itemDescription;
                 slots[i].GetComponent<Slot>().icon = itemIcon;
 
                 itemObject.transform.parent = slots[i].transform;
