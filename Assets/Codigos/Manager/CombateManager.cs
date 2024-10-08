@@ -124,7 +124,7 @@ public class CombateManager : MonoBehaviour
         // Desactivar el panel de selecci�n despu�s de elegir un personaje
         panelSeleccionPersonajes.SetActive(false);
     }
-
+/*
     public void PlayerAttack()
     {
         if (playerAttacking)
@@ -150,6 +150,13 @@ public class CombateManager : MonoBehaviour
         }
     }
 
+    public void TurnoJugador()
+    {
+        enemyAttacking = false;
+        playerAttacking = true;
+        Debug.Log("Turno del jugador de nuevo.");
+    }
+    */
 
     public void IniciarAtaqueEnemigo()
     {
@@ -179,16 +186,11 @@ public class CombateManager : MonoBehaviour
                     break;
             }
 
-            TurnoJugador();
+            //TurnoJugador();
         }
     }
 
     // Método para cambiar el turno de vuelta al jugador
-    public void TurnoJugador()
-    {
-        enemyAttacking = false;
-        playerAttacking = true;
-        Debug.Log("Turno del jugador de nuevo.");
-    }
+
 
 }

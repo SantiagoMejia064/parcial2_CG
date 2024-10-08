@@ -32,8 +32,8 @@ public class Enemigo1 : MonoBehaviour
         if (tirada <= 3)
         {
             Debug.Log(tirada + "Pifia en la tirada de exito, no se realiza accion.");
-            combate.playerAttacking = false;
-            combate.enemyAttacking = true;
+            combate.playerAttacking = true;
+            combate.enemyAttacking = false;
             return false;
 
         }
@@ -51,22 +51,22 @@ public class Enemigo1 : MonoBehaviour
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
                 Debug.Log("Pifia en el ataque de personaje 1, no se hace da�o.");
-                combate.playerAttacking = false;
-                combate.enemyAttacking = true;
+                combate.playerAttacking = true;
+                combate.enemyAttacking = false;
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
             {
                 Debug.Log("El ataque de personaje 1 es exitoso, supera la fuerza del personaje.");
-                combate.playerAttacking = false;
-                combate.enemyAttacking = true;
+                combate.playerAttacking = true;
+                combate.enemyAttacking = false;
                 return true;
             }
             else
             {
                 Debug.Log("El ataque de personaje 1 no es exitoso, no supera la fuerza del personaje.");
-                combate.playerAttacking = false;
-                combate.enemyAttacking = true;
+                combate.playerAttacking = true;
+                combate.enemyAttacking = false;
                 return false;
             }
         }
@@ -81,8 +81,8 @@ public class Enemigo1 : MonoBehaviour
             int valorAtaque = d6;
             Debug.Log("El personaje hizo el siguiente da�o: " + d6 +  " = " + valorAtaque);
 
-            combate.playerAttacking = false;
-            combate.enemyAttacking = true;
+            combate.playerAttacking = true;
+            combate.enemyAttacking = false;
         }
     }
 
