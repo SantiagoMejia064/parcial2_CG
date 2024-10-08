@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject[] enemigos;
     [SerializeField] public GameObject[] posEnemigos;
     */
+    public Vector3 punto;
     public bool inJuego = false;
     public bool inBosque = false;
     public bool inBoss = false;

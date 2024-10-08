@@ -30,8 +30,6 @@ public class MovimientoPlataforma : MonoBehaviour
     [Header("Animaci�n")]
     public Animator anim;
 
-    // private Vector2 startPoint;
-
     //public AudioSource salto;
     //public AudioSource caminar;
 
@@ -145,6 +143,17 @@ public class MovimientoPlataforma : MonoBehaviour
         {
             transform.parent = collision.transform;
         }
+
+
+        if (collision.gameObject.tag == "Enemigo1" || collision.gameObject.tag == "Enemigo2" || collision.gameObject.tag == "Enemigo3" || collision.gameObject.tag == "Enemigo4")
+        {
+            GameManager.Instance.punto = collision.transform.position;
+        }
+        /*
+
+        jugadre.transform.position = EscenaManager.instance.punto;
+        salugjugadores = EscenaManager.instance.salud;
+        */
     }
 
     
@@ -185,13 +194,6 @@ public class MovimientoPlataforma : MonoBehaviour
             Debug.Log("Tiene " + GameManager.Instance.cantEspadas + " Espadas");
             Destroy(collision.gameObject);
         }
-
-        /*
-        EscenaManager.instance.punto = collision.transform.position;
-
-        jugadre.transform.position = EscenaManager.instance.punto;
-        salugjugadores = EscenaManager.instance.salud;
-        */
     }
 
     

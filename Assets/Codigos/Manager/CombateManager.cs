@@ -53,27 +53,30 @@ public class CombateManager : MonoBehaviour
  
 
     void Awake(){
-        if(GameManager.Instance != null)
-        {
-            switch(GameManager.Instance.enemigoEnColision){
-            case 1:
-                enemigo1.SetActive(true);
-                break;
-            case 2:
-                enemigo2.SetActive(true);
-                break;
-            case 3:
-                enemigo3.SetActive(true);
-                break;
-            case 4:
-                enemigo4.SetActive(true);
-                break;
-            default:
-                Debug.LogWarning("indice de enemigo invalido");
-                break;
+        if(SceneManager.GetActiveScene().name == "Combate"){
+            if(GameManager.Instance != null)
+            {
+                switch(GameManager.Instance.enemigoEnColision){
+                case 1:
+                    enemigo1.SetActive(true);
+                    break;
+                case 2:
+                    enemigo2.SetActive(true);
+                    break;
+                case 3:
+                    enemigo3.SetActive(true);
+                    break;
+                case 4:
+                    enemigo4.SetActive(true);
+                    break;
+                default:
+                    Debug.LogWarning("indice de enemigo invalido");
+                    break;
 
+                }
             }
         }
+        
         //Debug.Log("Colisionó con enemigo #" + gameManager.enemigoEnColision);
     }
 

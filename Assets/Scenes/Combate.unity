@@ -2489,6 +2489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigoEnColision: 0
+  punto: {x: 0, y: 0, z: 0}
   inJuego: 0
   inBosque: 0
   inBoss: 0
@@ -4508,6 +4509,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3472118516275301729, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
+      propertyPath: P1
+      value: 
+      objectReference: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+    - target: {fileID: 3472118516275301729, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
+      propertyPath: P2
+      value: 
+      objectReference: {fileID: 7168817509697974596, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
+    - target: {fileID: 3472118516275301729, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
+      propertyPath: P3
+      value: 
+      objectReference: {fileID: 7168817509697974596, guid: 5109934dbd017c448a8616c7d630044d, type: 3}
+    - target: {fileID: 3472118516275301729, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
+      propertyPath: P4
+      value: 
+      objectReference: {fileID: 7168817509697974596, guid: 6ed82d1ec6796f4459f550239b9d1bd3, type: 3}
     - target: {fileID: 3472118516275301729, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
       propertyPath: fuerza
       value: 15
