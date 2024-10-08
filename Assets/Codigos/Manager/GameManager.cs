@@ -40,10 +40,12 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-
-        pocion = GameObject.Find("txt_pocion").GetComponent<Text>();
-        gema = GameObject.Find("txt_gema").GetComponent<Text>();
-        espada = GameObject.Find("txt_espada").GetComponent<Text>();
+        if(SceneManager.GetActiveScene().name == "Town" || SceneManager.GetActiveScene().name == "Juego" || SceneManager.GetActiveScene().name == "Boss"){
+            pocion = GameObject.Find("txt_pocion").GetComponent<Text>();
+            gema = GameObject.Find("txt_gema").GetComponent<Text>();
+            espada = GameObject.Find("txt_espada").GetComponent<Text>();
+        }
+        
     }
 
     private void Update()
