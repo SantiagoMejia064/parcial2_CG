@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     public int cantEspadas = 0;
     public int cantPociones = 0;
 
+    // retro
+    public Text retroalimentación;
+
     //public Text llavesMoradas;
 
     public Text pocion;
@@ -107,4 +110,12 @@ public class GameManager : MonoBehaviour
     {
         enemigoEnColision = enemigo;
     }
+
+    public void SetRetroalimentación(string texto)
+    {
+        retroalimentación.text = texto;
+
+    }
+
+
 }

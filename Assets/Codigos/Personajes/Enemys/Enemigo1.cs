@@ -54,21 +54,21 @@ public class Enemigo1 : MonoBehaviour
 
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
-                Debug.Log("Pifia en el ataque de personaje 1, no se hace da�o.");
+                Debug.Log("Pifia en el ataque del enemigo 1, no se hace da�o.");
                 combate.playerAttacking = true;
                 combate.enemyAttacking = false;
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
             {
-                Debug.Log("El ataque de personaje 1 es exitoso, supera la fuerza del personaje.");
+                Debug.Log("El ataque del enemigo 1 es exitoso, supera la fuerza del personaje.");
                 combate.playerAttacking = true;
                 combate.enemyAttacking = false;
                 return true;
             }
             else
             {
-                Debug.Log("El ataque de personaje 1 no es exitoso, no supera la fuerza del personaje.");
+                Debug.Log("El ataque del enemiigo 1 no es exitoso, no supera la fuerza del personaje.");
                 combate.playerAttacking = true;
                 combate.enemyAttacking = false;
                 return false;
@@ -83,10 +83,36 @@ public class Enemigo1 : MonoBehaviour
             int d6 = UnityEngine.Random.Range(0, 6);
 
             int valorAtaque = d6;
-            Debug.Log("El personaje hizo el siguiente da�o: " + d6 +  " = " + valorAtaque);
+            Debug.Log("El personaje hizo el siguiente daño: " + d6 +  " = " + valorAtaque);
 
+            Player1Attack playerScript = GameObject.FindObjectOfType<Player1Attack>();
+            if (playerScript != null)
+            {
+                playerScript.GetDamage(valorAtaque);  // Aplicar el daño al jugador usando GetDamage
+            }
+            else
+            {
+                Debug.LogWarning("No se encontró el script del jugador para aplicar daño.");
+            }
+
+
+
+            Debug.Log("El turno del enemigo terminó, turno del jugador activado.");
             combate.playerAttacking = true;
             combate.enemyAttacking = false;
+            combate.ActivatePlayerAttackButtons(true);
+        }
+        else
+        {
+            Debug.Log("El ataque del enemigo falló.");
+
+            // Aun si el ataque del enemigo falla, devolvemos el turno al jugador
+            Debug.Log("El turno del enemigo terminó, turno del jugador activado.");
+            combate.playerAttacking = true;
+            combate.enemyAttacking = false;
+
+            // Activar los botones de ataque del jugador
+            combate.ActivatePlayerAttackButtons(true);
         }
     }
 

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CombateManager : MonoBehaviour
 {
-   
-    // Referencias a los GameObjects de cada personaje (P1, P2, P3, P4)
     public GameObject personaje1;
     public GameObject personaje2;
     public GameObject personaje3;
@@ -29,28 +28,30 @@ public class CombateManager : MonoBehaviour
     public Enemigo2 enemigoDOS;
     public Enemigo3 enemigoTRES;
     public Enemigo4 enemigoCUATRO;
-    //public GameManager gameManager;
 
-    // Referencia al panel de selecci�n de personajes
+    public Button[] playerAttackButtons;  // Botones de ataque del jugador
+    public GameManager gameManager;
     public GameObject panelSeleccionPersonajes;
-   
+
+
+    
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "Combate")
         {
             playerAttacking = true; 
             enemyAttacking = false;  
-
             Debug.Log("Iniciando combate");
+            ActivatePlayerAttackButtons(true); // Activar botones de ataque al inicio
         }
         else
         {
             playerAttacking = false;
             enemyAttacking = false;
-            Debug.Log("No es la escena para que estos manes combatan");
+            Debug.Log("No es la escena para que combatan");
         }
     }
- 
+
 
     void Awake(){
         if(SceneManager.GetActiveScene().name == "Combate"){
@@ -127,73 +128,170 @@ public class CombateManager : MonoBehaviour
         // Desactivar el panel de selecci�n despu�s de elegir un personaje
         panelSeleccionPersonajes.SetActive(false);
     }
-/*
-    public void PlayerAttack()
+
+    // Activar o desactivar los botones de ataque del jugador
+    public void ActivatePlayerAttackButtons(bool state)
+    {
+        foreach (Button btn in playerAttackButtons)
+    {
+        if (btn != null) // Verificamos que el botón no sea null
+        {
+            btn.interactable = state; // Si state es 'true', se activan; si es 'false', se desactivan.
+        }
+    }
+    }
+
+    // Método para manejar el ataque del jugador cuando se presiona un botón
+    /*public void PlayerAttack(int ataqueIndex)
     {
         if (playerAttacking)
         {
-            playerAttacking = false;
-            enemyAttacking = true;
-            Debug.Log("El jugador está atacando.");
+            Debug.Log("El jugador ha atacado.");
+            ActivatePlayerAttackButtons(false); // Desactiva los botones de ataque
 
-            TurnoEnemigo();
+            // Simular el ataque basado en el índice de ataque
+            if (ataqueIndex == 1)
+            {
+                // Ejemplo: llamar a un método de ataque 1
+                P1Attack1.GetComponent<Player1Attack>().TiradaAtaque();
+            }
+            else if (ataqueIndex == 2)
+            {
+                // Ejemplo: llamar a un método de ataque 2
+                P1Attack2.GetComponent<Player1Attack>().TiradaAtaque2();
+            }
+
+            // Luego de que el jugador ataque, pasa al turno del enemigo
+            StartCoroutine(eleccionAtaqueEnemigo());
         }
-    }
+    }*/
 
-
-    public void TurnoEnemigo()
-    {
-        if (!playerAttacking)  
-        {
-            playerAttacking = false;
-            enemyAttacking = true;
-            Debug.Log("Cambiando turno al enemigo.");
-
-            IniciarAtaqueEnemigo();
-        }
-    }
-
-    public void TurnoJugador()
-    {
-        enemyAttacking = false;
-        playerAttacking = true;
-        Debug.Log("Turno del jugador de nuevo.");
-    }
-    */
-
-    public void IniciarAtaqueEnemigo()
+    // Coroutine que maneja el turno del enemigo
+    public IEnumerator eleccionAtaqueEnemigo()
     {
         if (enemyAttacking)
-        {
-            Debug.Log("Turno del enemigo.");
-            Debug.Log("Enemigo en colision: " + GameManager.Instance.enemigoEnColision);
-
-            switch (GameManager.Instance.enemigoEnColision)
             {
+                
+                playerAttacking = false;
+                enemyAttacking = true;
+
+                Debug.Log("Turno del enemigo comenzando en 1.5 segundos...");
+
+                yield return new WaitForSeconds(1.5f);
+                Debug.Log("Lógica de ataque del enemigo, enemigo en colisión: " + GameManager.Instance.enemigoEnColision);
+
+                switch (GameManager.Instance.enemigoEnColision)
+                {
+                    case 1:
+                        enemigoUNO.TiradaAtaque();
+                        Debug.Log("El enemigo 1 atacó");  // El enemigo realiza su ataque
+                        break;
+                    case 2:
+                        enemigoDOS.TiradaAtaque();
+                        Debug.Log("El enemigo 2 atacó");  // El enemigo realiza su ataque
+                        break;
+                    case 3:
+                        enemigoTRES.TiradaAtaque();
+                        Debug.Log("El enemigo 3 atacó");  // El enemigo realiza su ataque
+                        break;
+                    case 4:
+                        enemigoCUATRO.TiradaAtaque();
+                        Debug.Log("El enemigo 4 atacó");  // El enemigo realiza su ataque
+                        break; 
+                    default:
+                        Debug.LogWarning("indice de enemigo invalido");
+                        break;
+                }
+
+                yield return new WaitForSeconds(2f);
+
+
+                Debug.Log("Turno del enemigo terminado, activando turno del jugador...");
+                playerAttacking = true;
+                enemyAttacking = false;
+                
+                Debug.Log("Turno del mancito activate");
+                ActivatePlayerAttackButtons(true);
+                
+            }   
+            else
+            {
+                Debug.Log("No es el turno del enemy");
+            }
+            
+             
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*IEnumerator eleccionAtaque()
+    {
+        while (true)
+    {
+        if (playerAttacking)
+        {
+            // Lógica para el turno del jugador
+            Debug.Log("Turno del jugador");
+            yield return new WaitForSeconds(2f);  // Espera un tiempo para simular el ataque
+            playerAttacking = false;
+            enemyAttacking = true;
+        }
+        else if (enemyAttacking)
+        {
+            // Lógica para el turno del enemigo
+            Debug.Log("Turno del enemigo");
+
+            switch(GameManager.Instance.enemigoEnColision){
                 case 1:
-                    Debug.Log("Enemigo 1 está atacando.");
-                    enemigoUNO.atacar();
+                    enemigoUNO.TiradaAtaque();  // El enemigo realiza su ataque
                     break;
                 case 2:
-                    Debug.Log("Enemigo 2 está atacando.");
-                    enemigoDOS.TiradaAtaque();
+                    enemigoDOS.TiradaAtaque();  // El enemigo realiza su ataque
                     break;
                 case 3:
-                    Debug.Log("Enemigo 3 está atacando.");
-                    enemigoTRES.TiradaAtaque();
+                    enemigoTRES.TiradaAtaque();  // El enemigo realiza su ataque
                     break;
                 case 4:
-                    
-                    Debug.Log("Enemigo 4 está atacando.");
-                    enemigoCUATRO.TiradaAtaque();
+                    enemigoCUATRO.TiradaAtaque();  // El enemigo realiza su ataque
+                    break;
+                default:
+                    Debug.LogWarning("indice de enemigo invalido");
                     break;
             }
 
-            //TurnoJugador();
+            yield return new WaitForSeconds(2f);  // Espera un tiempo para simular el ataque
+            playerAttacking = true;
+            enemyAttacking = false;
         }
     }
+    }*/
+    
 
-    // Método para cambiar el turno de vuelta al jugador
+    
 
-
-}
