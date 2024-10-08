@@ -46,7 +46,7 @@ public class MovimientoPlataforma : MonoBehaviour
 
     void Update()
     {
-        if (attack == false)
+        if (!(SceneManager.GetActiveScene().name == "Combate"))
         {
             horizontal = Input.GetAxisRaw("Horizontal");
            
