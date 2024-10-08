@@ -2165,7 +2165,7 @@ GameObject:
   - component: {fileID: 1068422454}
   - component: {fileID: 1068422453}
   m_Layer: 5
-  m_Name: TextoRet
+  m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2581,7 +2581,6 @@ MonoBehaviour:
   cantEspadas: 0
   cantPociones: 0
   "retroalimentaci\xF3n": {fileID: 1068422453}
-  textRetro: 
   pocion: {fileID: 0}
   gema: {fileID: 0}
   espada: {fileID: 0}
