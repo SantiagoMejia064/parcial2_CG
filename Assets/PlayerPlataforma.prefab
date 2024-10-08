@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: -2543011223368365369}
   - component: {fileID: 4732928497283095180}
   - component: {fileID: 3517043539199423108}
-  - component: {fileID: -4890951478075392602}
   m_Layer: 7
   m_Name: PlayerPlataforma
   m_TagString: Player
@@ -263,17 +262,4 @@ MonoBehaviour:
   enemigo4: {fileID: 0}
   fuerza: 17
   resistencia: 38
---- !u!114 &-4890951478075392602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7168817509697974596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b0ffba4f82ddb418e75e05d55f1ded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  slotHolder: {fileID: 0}
+  anim: {fileID: 0}

@@ -125,7 +125,9 @@ public class MovimientoPlataforma : MonoBehaviour
     // Para simulaciones fisicas es recomendable el FixedUpdate
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal*velocidad, rb.velocity.y);
+        if(!(SceneManager.GetActiveScene().name == "Combate")){
+            rb.velocity = new Vector2(horizontal*velocidad, rb.velocity.y);
+        }
         
         //rb.AddForce(Vector2.right * horizontal * velocidad, ForceMode2D.Force);
         
