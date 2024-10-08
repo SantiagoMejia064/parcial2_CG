@@ -217,18 +217,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 16763638}
-        m_TargetAssemblyTypeName: CombateManager, Assembly-CSharp
-        m_MethodName: PlayerAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &15067707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,18 +1074,6 @@ MonoBehaviour:
       - m_Target: {fileID: 676643907}
         m_TargetAssemblyTypeName: Player1Attack, Assembly-CSharp
         m_MethodName: TiradaAtaque2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 16763638}
-        m_TargetAssemblyTypeName: CombateManager, Assembly-CSharp
-        m_MethodName: PlayerAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2517,6 +2493,12 @@ MonoBehaviour:
   inBosque: 0
   inBoss: 0
   cantLlaveMorada: 0
+  cantGemas: 0
+  cantEspadas: 0
+  cantPociones: 0
+  pocion: {fileID: 0}
+  gema: {fileID: 0}
+  espada: {fileID: 0}
 --- !u!4 &1295921854
 Transform:
   m_ObjectHideFlags: 0
@@ -3258,7 +3240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7192229229355104544, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_Size.x
