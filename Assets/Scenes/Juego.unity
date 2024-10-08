@@ -1117,6 +1117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafd2695fddc0674c9c6b91621694a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objetosPersistentes:
+  - {fileID: 1615496994}
+  - {fileID: 987441439}
+  objectIndex: 0
   enemigoEnColision: 0
   inJuego: 0
   inBosque: 0
@@ -1606,8 +1610,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7095052736175235639, guid: 60b524e3ff1d9dd4ca9350dcdaa3feb8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 987441440}
   m_SourcePrefab: {fileID: 100100000, guid: 60b524e3ff1d9dd4ca9350dcdaa3feb8, type: 3}
+--- !u!1 &987441439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7095052736175235639, guid: 60b524e3ff1d9dd4ca9350dcdaa3feb8, type: 3}
+  m_PrefabInstance: {fileID: 987441438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &987441440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987441439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea22f4fc65e288419778c51221cbe29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1010714964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,7 +2725,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1615497002}
   m_SourcePrefab: {fileID: 100100000, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
 --- !u!1 &1569173738
 GameObject:
@@ -2744,6 +2771,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7477677312454418949, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
   m_PrefabInstance: {fileID: 1564871836}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1615497002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615496994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea22f4fc65e288419778c51221cbe29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620640134
 GameObject:
   m_ObjectHideFlags: 0

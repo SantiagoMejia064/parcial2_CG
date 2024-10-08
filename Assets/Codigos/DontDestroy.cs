@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /*
+    private static GameObject[] objetosPersisntentes = new GameObject[3];
 
-    // Update is called once per frame
-    void Update()
+    public int objectIndex;
+
+    void Awake()
     {
-        
+        if (objetosPersisntentes[objectIndex] == null)
+        {
+            objetosPersisntentes[objectIndex] = gameObject;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (objetosPersisntentes[objectIndex] != gameObject)
+        {
+            Destroy(gameObject);
+        }
     }
+    */
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
+    /*
     public GameObject item; 
     public int ID;
     public string type;
@@ -28,4 +29,5 @@ public class Slot : MonoBehaviour
             this.GetComponent<Image>().sprite = icon;
         }
     }
+    */
 }

@@ -12,11 +12,11 @@ public class Inventario : MonoBehaviour
     public GameObject inventory;
 
     
-    private int allSlots;
+   // private int allSlots;
 
-    private int enabledSlots;
+   // private int enabledSlots;
 
-    public GameObject[] slot;
+    //public GameObject[] slot;
 
     //public GameObject slotHolder;
 
@@ -56,7 +56,7 @@ public class Inventario : MonoBehaviour
         }
     }
 
-
+    /*
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Pocion")
@@ -110,5 +110,5 @@ public class Inventario : MonoBehaviour
             }
         }
     }
-    
+    */
 }
