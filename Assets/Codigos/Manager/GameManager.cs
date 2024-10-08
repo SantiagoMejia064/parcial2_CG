@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     // retro
     public Text retroalimentación;
+    public string textRetro;
 
     //public Text llavesMoradas;
 
@@ -48,6 +49,12 @@ public class GameManager : MonoBehaviour
             pocion = GameObject.Find("txt_pocion").GetComponent<Text>();
             gema = GameObject.Find("txt_gema").GetComponent<Text>();
             espada = GameObject.Find("txt_espada").GetComponent<Text>();
+        }
+
+        if(SceneManager.GetActiveScene().name == "Combate")
+        {
+            retroalimentación = GameObject.Find("TextoRet").GetComponent<Text>();
+
         }
         
     }
@@ -113,7 +120,9 @@ public class GameManager : MonoBehaviour
 
     public void SetRetroalimentación(string texto)
     {
-        retroalimentación.text = texto;
+        textRetro = texto;
+        retroalimentación.text = textRetro.ToString();
+        
 
     }
 
