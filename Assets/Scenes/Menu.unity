@@ -436,7 +436,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigoEnColision: 0
-  enemigos: []
+  inJuego: 0
+  inBosque: 0
+  inBoss: 0
   cantLlaveMorada: 0
 --- !u!4 &620299595
 Transform:
@@ -690,7 +692,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21dc830570193a448e702feecbaea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 620299594}
+  tiempoEsc: 0
+  aparecerEnemigo: 1
+  time: 0
 --- !u!4 &812515013
 Transform:
   m_ObjectHideFlags: 0
@@ -740,8 +744,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53, y: 179}
-  m_SizeDelta: {x: 1967.82, y: 448.14}
+  m_AnchoredPosition: {x: -12.83, y: 179}
+  m_SizeDelta: {x: 1856.77, y: 448.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1454739626
 MonoBehaviour:

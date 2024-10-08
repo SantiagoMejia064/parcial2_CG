@@ -163,6 +163,27 @@ public class MovimientoPlataforma : MonoBehaviour
             escenaManager.inicioJuego();
         }
 
+        if(collision.tag == "Pocion")
+        {
+            GameManager.Instance.SetPociones();
+            Debug.Log("Tiene " + GameManager.Instance.cantPociones + " Pociones");
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.tag == "Gema")
+        {
+            GameManager.Instance.SetGemas();
+            Debug.Log("Tiene " + GameManager.Instance.cantGemas + " Gemas");
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.tag == "Espada")
+        {
+            GameManager.Instance.SetEspadas();
+            Debug.Log("Tiene " + GameManager.Instance.cantEspadas + " Espadas");
+            Destroy(collision.gameObject);
+        }
+
         /*
         EscenaManager.instance.punto = collision.transform.position;
 

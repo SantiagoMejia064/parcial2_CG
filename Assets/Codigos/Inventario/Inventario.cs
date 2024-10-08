@@ -5,18 +5,22 @@ using UnityEngine;
 
 public class Inventario : MonoBehaviour
 {
+
+
     public bool inventoryEnabled;
 
     public GameObject inventory;
 
+    
     private int allSlots;
 
     private int enabledSlots;
 
-    private GameObject[] slot;
+    public GameObject[] slot;
 
-    public GameObject slotHolder;
+    //public GameObject slotHolder;
 
+    /*
     private void Start()
     {
         allSlots = slotHolder.transform.childCount;
@@ -33,6 +37,7 @@ public class Inventario : MonoBehaviour
             }
         }
     }
+    */
 
     private void Update()
     {
@@ -54,7 +59,21 @@ public class Inventario : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Item")
+        if(other.tag == "Pocion")
+        {
+            GameObject itemPickedUp = other.gameObject;
+
+            Item item = itemPickedUp.GetComponent<Item>();
+
+            AddItem(itemPickedUp, item.ID, item.type, item.descripcion, item.icon);
+        }else if(other.tag == "Espada")
+        {
+            GameObject itemPickedUp = other.gameObject;
+
+            Item item = itemPickedUp.GetComponent<Item>();
+
+            AddItem(itemPickedUp, item.ID, item.type, item.descripcion, item.icon);
+        }else if(other.tag == "Gema")
         {
             GameObject itemPickedUp = other.gameObject;
 
@@ -63,7 +82,7 @@ public class Inventario : MonoBehaviour
             AddItem(itemPickedUp, item.ID, item.type, item.descripcion, item.icon);
         }
     }
-
+    
     public void AddItem(GameObject itemObject, int itemID, string itemType, string itemDescripcion, Sprite itemIcon)
     {
         for (int i = 0; i < allSlots; i++)
@@ -91,4 +110,5 @@ public class Inventario : MonoBehaviour
             }
         }
     }
+    
 }

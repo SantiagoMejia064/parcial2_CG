@@ -13,6 +13,9 @@ TagManager:
   - Enemigo3
   - Enemigo4
   - Item
+  - Pocion
+  - Gema
+  - Espada
   layers:
   - Default
   - TransparentFX

@@ -19,7 +19,19 @@ public class GameManager : MonoBehaviour
     public bool inBoss = false;
 
     public int cantLlaveMorada = 0;
+
+    public int cantGemas = 0;
+    public int cantEspadas = 0;
+    public int cantPociones = 0;
+
     //public Text llavesMoradas;
+
+    public Text pocion;
+
+    public Text gema;
+
+    public Text espada;
+    
     private void Awake(){
         if (Instance != null && Instance != this){
             Destroy(this);
@@ -28,6 +40,10 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        pocion = GameObject.Find("txt_pocion").GetComponent<Text>();
+        gema = GameObject.Find("txt_gema").GetComponent<Text>();
+        espada = GameObject.Find("txt_espada").GetComponent<Text>();
     }
 
     private void Update()
@@ -64,6 +80,24 @@ public class GameManager : MonoBehaviour
         //llavesMoradas.text = "Llaves Moradas: " + cantLlaveMorada.ToString();
     }
 
+    public void SetGemas()
+    {
+        cantGemas++;
+        gema.text = "Gemas: " + cantGemas.ToString();
+    }
+
+    public void SetEspadas()
+    {
+        cantEspadas++;
+        espada.text = "Espadas: " + cantEspadas.ToString();
+    }
+
+    public void SetPociones()
+    {
+        cantPociones++;
+        pocion.text = "Pociones: " + cantPociones.ToString();
+    }
+    
     public void SetEnemigoEnColision(int enemigo)
     {
         enemigoEnColision = enemigo;

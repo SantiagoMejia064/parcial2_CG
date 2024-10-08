@@ -13,6 +13,9 @@ public class EscenaManager : MonoBehaviour
     public void inicioJuego(){
         SceneManager.LoadScene("Juego", LoadSceneMode.Single);
         //Debug.Log("Tiene " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
+        Debug.Log(GameManager.Instance.cantGemas);
+        Debug.Log(GameManager.Instance.cantEspadas);
+        Debug.Log(GameManager.Instance.cantPociones);
     }
 
     public void finJuego(){
