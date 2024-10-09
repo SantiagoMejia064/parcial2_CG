@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool inJuego = false;
     public bool inBosque = false;
     public bool inBoss = false;
+    public bool elenaLife = true;
 
     public int cantLlaveMorada = 0;
 

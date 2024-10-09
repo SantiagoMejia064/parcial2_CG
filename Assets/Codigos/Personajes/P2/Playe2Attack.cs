@@ -13,10 +13,15 @@ public class Player2Attack : MonoBehaviour
     public Enemigo4 enemigo4;
 
     [Header("Estadisticas")]
-
     public int fuerza;
     public int resistencia;
 
+    private int valorAtaque;
+    private Animator anim;
+
+    void Awake(){
+        anim = GetComponent<Animator>();
+    }
     public bool TiradaDeExito()
     {
         int tirada = Random.Range(0, 10);
@@ -56,15 +61,8 @@ public class Player2Attack : MonoBehaviour
         }
     }
 
-    public void TiradaAtaque()
-    {
-        if (TiradaDeExito())
-        {
-            int d10 = Random.Range(0, 10);
-
-            int valorAtaque = d10;
-            Debug.Log("Tirada de ataque de personaje 2: " + d10 + " = " + valorAtaque);
-            switch(GameManager.Instance.enemigoEnColision){
+    public void atacar(){
+        switch(GameManager.Instance.enemigoEnColision){
                 case 1:
                     enemigo1.GetDamage(valorAtaque);
                     break;
@@ -81,6 +79,20 @@ public class Player2Attack : MonoBehaviour
                     Debug.LogWarning("indice de enemigo invalido");
                     break;
             }
+
+            combate.playerAttacking = false;
+            combate.enemyAttacking = true;
+    }
+
+    public void TiradaAtaque()
+    {
+        if (TiradaDeExito())
+        {
+            int d10 = Random.Range(0, 10);
+
+            valorAtaque = d10;
+            Debug.Log("Tirada de ataque de personaje 2: " + d10 + " = " + valorAtaque);
+            anim.SetTrigger("Ataque1");
 
             combate.playerAttacking = false;
             combate.enemyAttacking = true;  
@@ -95,27 +107,10 @@ public class Player2Attack : MonoBehaviour
             int d10 = Random.Range(0, 10);
             int d4 = Random.Range(0, 4);
 
-            int valorAtaque = d10 + d4;
-            Debug.Log("Tirada de ataque de personaje 2: " + d10 + "+" + d4 + " = " + valorAtaque);
-            switch(GameManager.Instance.enemigoEnColision){
-                case 1:
-                    enemigo1.GetDamage(valorAtaque);
-                    break;
-                case 2:
-                    enemigo2.GetDamage(valorAtaque);
-                    break;
-                case 3:
-                    enemigo3.GetDamage(valorAtaque);
-                    break;
-                case 4:
-                    enemigo4.GetDamage(valorAtaque);
-                    break;
-                default:
-                    Debug.LogWarning("indice de enemigo invalido");
-                    break;
-            }
+            valorAtaque = d10 + d4;
 
-            combate.playerAttacking = false;
+            Debug.Log("Tirada de ataque de personaje 2: " + d10 + "+" + d4 + " = " + valorAtaque);
+            anim.SetTrigger("Ataque2");
             combate.enemyAttacking = true;  
         }
     }
@@ -129,27 +124,10 @@ public class Player2Attack : MonoBehaviour
             int D4 = Random.Range(0, 4);
 
 
-            int valorAtaque = d10 + d4 + D4;
+            valorAtaque = d10 + d4 + D4;
+            
             Debug.Log("Tirada de ataque de personaje 2: " + d10 + "+" +d4 + "+" + D4 + "=" + valorAtaque);
-            switch(GameManager.Instance.enemigoEnColision){
-                case 1:
-                    enemigo1.GetDamage(valorAtaque);
-                    break;
-                case 2:
-                    enemigo2.GetDamage(valorAtaque);
-                    break;
-                case 3:
-                    enemigo3.GetDamage(valorAtaque);
-                    break;
-                case 4:
-                    enemigo4.GetDamage(valorAtaque);
-                    break;
-                default:
-                    Debug.LogWarning("indice de enemigo invalido");
-                    break;
-            }
-
-            combate.playerAttacking = false;
+            anim.SetTrigger("Ataque3");
             combate.enemyAttacking = true;  
         }
     }

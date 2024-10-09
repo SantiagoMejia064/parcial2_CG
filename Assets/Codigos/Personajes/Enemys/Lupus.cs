@@ -28,36 +28,68 @@ public class Lupus : MonoBehaviour
     }
 
     public void atacar(){
-        int ayuda = Random.Range(0,1);
-        if(ayuda == 0){
-            if(TiradaDeExito()){
-                TiradaAtaque();
-                elena.TiradaAtaque();
-                int jugadorAtacar = UnityEngine.Random.Range(1, 5);
-                switch(jugadorAtacar){
-                    case 1:
-                        player1.GetDamage(valorAtaque);
-                        combate.playerAttacking = true;
-                        combate.enemyAttacking = false;
-                        break;
-                    case 2:
-                        player2.GetDamage(valorAtaque);
-                        combate.playerAttacking = true;
-                        combate.enemyAttacking = false;
-                        break;
-                    case 3:
-                        player3.GetDamage(valorAtaque);
-                        combate.playerAttacking = true;
-                        combate.enemyAttacking = false;
-                        break;
-                    case 4:
-                        player4.GetDamage(valorAtaque);
-                        combate.playerAttacking = true;
-                        combate.enemyAttacking = false;
-                        break;
-                    default:
-                        Debug.LogWarning("indice de enemigo invalido");
-                        break;
+        if(GameManager.Instance.elenaLife){
+            int ayuda = Random.Range(0,1);
+            if(ayuda == 0){
+                if(TiradaDeExito()){
+                    TiradaAtaque();
+                    elena.TiradaAtaque();
+                    int jugadorAtacar = UnityEngine.Random.Range(1, 5);
+                    switch(jugadorAtacar){
+                        case 1:
+                            player1.GetDamage(valorAtaque);
+                            combate.playerAttacking = true;
+                            combate.enemyAttacking = false;
+                            break;
+                        case 2:
+                            player2.GetDamage(valorAtaque);
+                            combate.playerAttacking = true;
+                            combate.enemyAttacking = false;
+                            break;
+                        case 3:
+                            player3.GetDamage(valorAtaque);
+                            combate.playerAttacking = true;
+                            combate.enemyAttacking = false;
+                            break;
+                        case 4:
+                            player4.GetDamage(valorAtaque);
+                            combate.playerAttacking = true;
+                            combate.enemyAttacking = false;
+                            break;
+                        default:
+                            Debug.LogWarning("indice de enemigo invalido");
+                            break;
+                    }
+                }
+            }else{
+                if(TiradaDeExito()){
+                    TiradaAtaque();
+                    int jugadorAtacar = UnityEngine.Random.Range(1, 5);
+                    switch(jugadorAtacar){
+                        case 1:
+                            player1.GetDamage(valorAtaque);
+                            combate.playerAttacking = true;
+                            combate.enemyAttacking = false;
+                            break;
+                        case 2:
+                            player2.GetDamage(valorAtaque);
+                            combate.playerAttacking = true;
+                            combate.enemyAttacking = false;
+                            break;
+                        case 3:
+                            player3.GetDamage(valorAtaque);
+                            combate.playerAttacking = true;
+                            combate.enemyAttacking = false;
+                            break;
+                        case 4:
+                            player4.GetDamage(valorAtaque);
+                            combate.playerAttacking = true;
+                            combate.enemyAttacking = false;
+                            break;
+                        default:
+                            Debug.LogWarning("indice de enemigo invalido");
+                            break;
+                    }
                 }
             }
         }else{
@@ -91,6 +123,7 @@ public class Lupus : MonoBehaviour
                 }
             }
         }
+        
     }
 
     
