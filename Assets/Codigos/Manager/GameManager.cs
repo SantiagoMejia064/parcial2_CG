@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
     public Text gema;
     public Text espada;
 
+    public AudioSource Musicafondo;
+
+
     private void Awake(){
         if (Instance != null && Instance != this){
             Destroy(this);
@@ -51,6 +54,9 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        Musicafondo = GameObject.Find("Bg-Music").GetComponent<AudioSource>();
+
         if(SceneManager.GetActiveScene().name == "Town" || SceneManager.GetActiveScene().name == "Juego" || SceneManager.GetActiveScene().name == "Boss"){
             pocion = GameObject.Find("txt_pocion").GetComponent<Text>();
             gema = GameObject.Find("txt_gema").GetComponent<Text>();

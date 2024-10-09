@@ -28,9 +28,9 @@ public class MovimientoPlataforma : MonoBehaviour
     public bool isCrouching = false;
 
     public AudioSource salto;
-    public AudioSource coin;
-    public AudioSource Caminar;
-
+    public AudioSource items;
+    public AudioSource pasos;
+    
     [Header("Animacion")]
     public Animator anim;
 
@@ -44,6 +44,10 @@ public class MovimientoPlataforma : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        salto = GameObject.Find("Salto").GetComponent<AudioSource>();
+        items = GameObject.Find("Items").GetComponent<AudioSource>();
+        pasos = GameObject.Find("Pasos").GetComponent<AudioSource>();
+        
     }
 
     void Update()
@@ -64,7 +68,7 @@ public class MovimientoPlataforma : MonoBehaviour
                 }
                 contJ++;
                 anim.SetFloat("Jumping", 1);
-                //salto.Play();
+                salto.Play();
 
                 Debug.Log(contJ);
             }
@@ -79,7 +83,7 @@ public class MovimientoPlataforma : MonoBehaviour
                 }
                 contJ++;
                 anim.SetFloat("Jumping", 1);
-                //salto.Play();
+                salto.Play();
 
                 Debug.Log(contJ);
             }
@@ -103,11 +107,11 @@ public class MovimientoPlataforma : MonoBehaviour
 
             if (Input.GetButtonDown("Horizontal") && isGrounded())
             {
-                //caminar.Play();
+                pasos.Play();
             }
             else
             {
-                //caminar.Stop();
+                pasos.Stop();
             }
 
             voltear();
@@ -171,7 +175,7 @@ public class MovimientoPlataforma : MonoBehaviour
 
             Destroy(collision.gameObject);
 
-            //moneda.Play();
+            items.Play();
         }
 
         if(collision.tag == "PuertaSalirPueblo"){
@@ -191,6 +195,7 @@ public class MovimientoPlataforma : MonoBehaviour
             GameManager.Instance.SetPociones();
             Debug.Log("Tiene " + GameManager.Instance.cantPociones + " Pociones");
             Destroy(collision.gameObject);
+            items.Play();
         }
 
         if (collision.tag == "Gema")
@@ -198,6 +203,7 @@ public class MovimientoPlataforma : MonoBehaviour
             GameManager.Instance.SetGemas();
             Debug.Log("Tiene " + GameManager.Instance.cantGemas + " Gemas");
             Destroy(collision.gameObject);
+            items.Play();
         }
 
         if (collision.tag == "Espada")
@@ -205,6 +211,7 @@ public class MovimientoPlataforma : MonoBehaviour
             GameManager.Instance.SetEspadas();
             Debug.Log("Tiene " + GameManager.Instance.cantEspadas + " Espadas");
             Destroy(collision.gameObject);
+            items.Play();
         }
     }
 
