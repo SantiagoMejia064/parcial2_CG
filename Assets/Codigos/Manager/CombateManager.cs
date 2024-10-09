@@ -29,9 +29,6 @@ public class CombateManager : MonoBehaviour
     public Enemigo3 enemigoTRES;
     public Enemigo4 enemigoCUATRO;
 
-    public Lupus lupus;
-    public Elena helena;
-
     public Button[] playerAttackButtons;  // Botones de ataque del jugador
     public GameManager gameManager;
     public GameObject panelSeleccionPersonajes;

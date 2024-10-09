@@ -305,6 +305,10 @@ MonoBehaviour:
   enemigoDOS: {fileID: 1065057538}
   enemigoTRES: {fileID: 1583769876}
   enemigoCUATRO: {fileID: 1865107508}
+  playerAttackButtons:
+  - {fileID: 15067706}
+  - {fileID: 563396290}
+  gameManager: {fileID: 1295921853}
   panelSeleccionPersonajes: {fileID: 1018099200}
 --- !u!4 &16763639
 Transform:
@@ -2576,6 +2580,7 @@ MonoBehaviour:
   cantGemas: 0
   cantEspadas: 0
   cantPociones: 0
+  "retroalimentaci\xF3n": {fileID: 1068422453}
   pocion: {fileID: 0}
   gema: {fileID: 0}
   espada: {fileID: 0}
