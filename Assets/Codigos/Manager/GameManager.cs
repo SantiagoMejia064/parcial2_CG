@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
     public void SetEspadas()
     {
         cantEspadas++;
-        espada.text = "Espadas: " + cantEspadas.ToString();
+        espada.text = "Espadas: " + cantEspadas.ToString(); 
     }
 
     public void SetPociones()

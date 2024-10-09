@@ -7292,7 +7292,12 @@ MonoBehaviour:
   enemigoDOS: {fileID: 0}
   enemigoTRES: {fileID: 0}
   enemigoCUATRO: {fileID: 0}
+  currentPlayer: 0
+  currentEnemy: 0
+  playerAttackButtons: []
+  gameManager: {fileID: 0}
   panelSeleccionPersonajes: {fileID: 0}
+  panelCombate: {fileID: 0}
 --- !u!4 &1317830186
 Transform:
   m_ObjectHideFlags: 0
@@ -17661,14 +17666,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafd2695fddc0674c9c6b91621694a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ListEnemigos: []
   enemigoEnColision: 0
+  punto: {x: 0, y: 0, z: 0}
   inJuego: 0
   inBosque: 0
   inBoss: 0
+  elenaLife: 1
   cantLlaveMorada: 0
   cantGemas: 0
   cantEspadas: 0
   cantPociones: 0
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
+  enemigo1: {fileID: 0}
+  enemigo2: {fileID: 0}
+  enemigo3: {fileID: 0}
+  enemigo4: {fileID: 0}
+  combate: {fileID: 0}
+  vidaJugador: {fileID: 0}
+  vidaEnemigo: {fileID: 0}
+  textoCombate: {fileID: 0}
   pocion: {fileID: 0}
   gema: {fileID: 0}
   espada: {fileID: 0}
@@ -19687,7 +19707,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852206679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -19944,6 +19964,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21dc830570193a448e702feecbaea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  P1: {fileID: 0}
+  P2: {fileID: 0}
+  P3: {fileID: 0}
+  P4: {fileID: 0}
   tiempoEsc: 0
   aparecerEnemigo: 1
   time: 0

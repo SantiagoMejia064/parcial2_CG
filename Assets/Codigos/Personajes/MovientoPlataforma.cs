@@ -174,6 +174,14 @@ public class MovimientoPlataforma : MonoBehaviour
             escenaManager.inicioJuego();
         }
 
+        if(collision.tag == "VolverPueblo"){
+            escenaManager.irPueblo();
+        }
+
+        if(collision.tag == "GoBoss"){
+            escenaManager.nivelBoss();
+        }
+
         if(collision.tag == "Pocion")
         {
             GameManager.Instance.SetPociones();
