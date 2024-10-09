@@ -6,18 +6,23 @@ public class EnemyPos : MonoBehaviour
 {
     public Transform[] enemyPos;
     public GameObject[] enemyPrefab;
+    public bool primerVez = true;
 
     private void Awake()
     {
-        int posicionEnemigos = Random.Range(1, enemyPos.Length);
-        
-        for (int i = 0; i < posicionEnemigos; i++)
+        if (primerVez)
         {
-            int seleccionEnemigos = Random.Range(1, enemyPrefab.Length);
-            if (null != enemyPrefab[seleccionEnemigos])
+            int posicionEnemigos = Random.Range(1, enemyPos.Length);
+            for (int i = 0; i < posicionEnemigos; i++)
             {
-                Instantiate(enemyPrefab[seleccionEnemigos], enemyPos[i].transform.position, enemyPos[i].transform.rotation);
+                int seleccionEnemigos = Random.Range(1, enemyPrefab.Length);
+                if (null != enemyPrefab[seleccionEnemigos])
+                {   
+                    GameObject enemigoX = Instantiate(enemyPrefab[seleccionEnemigos], enemyPos[i].transform.position, enemyPos[i].transform.rotation);
+                    GameManager.Instance.ListEnemigos.Add(enemigoX);
+                }
             }
+            primerVez = false;
         }
     }
 }

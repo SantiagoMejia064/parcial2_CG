@@ -8,10 +8,7 @@ public class Enemigo1 : MonoBehaviour
 {
     public CombateManager combate;
     public EscenaManager escenaManager;
-    public GameObject P1;
-    public GameObject P2;
-    public GameObject P3;
-    public GameObject P4;
+
 
     [Header("Estadisticas")]
     public int fuerza;
@@ -128,8 +125,6 @@ public class Enemigo1 : MonoBehaviour
         {
             Invoke("DestruirPersonaje", 1f);  // Espera 1 segundos antes de destruir el objeto
             escenaManager.inicioJuego();
-            P1.transform.position = GameManager.Instance.punto;
-            //escenaManager.inicioJuego();
         }
     }
 
@@ -143,7 +138,7 @@ public class Enemigo1 : MonoBehaviour
             Debug.Log("Enemigo en colision: 1");
             GameManager.Instance.SetEnemigoEnColision(1);
             Debug.Log("Será que si cambia el numero " + GameManager.Instance.enemigoEnColision);
-            Destroy(collision.gameObject);
+            Destroy(GameManager.Instance.gameObject);
             escenaManager.irCombate();
         }
     }

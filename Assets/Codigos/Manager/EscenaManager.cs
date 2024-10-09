@@ -6,16 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class EscenaManager : MonoBehaviour
 {
+    public GameObject P1;
+    public GameObject P2;
+    public GameObject P3;
+    public GameObject P4;
     public float tiempoEsc;
     public bool aparecerEnemigo = true;
     [SerializeField] private float time;
     
     public void inicioJuego(){
         SceneManager.LoadScene("Juego", LoadSceneMode.Single);
-        //Debug.Log("Tiene " + GameManager.Instance.cantLlaveMorada + " llaves moradas");
-        Debug.Log(GameManager.Instance.cantGemas);
-        Debug.Log(GameManager.Instance.cantEspadas);
-        Debug.Log(GameManager.Instance.cantPociones);
+        for (int i = 0; i < GameManager.Instance.ListEnemigos.Count; i++)
+        {
+            Instantiate(GameManager.Instance.ListEnemigos[i], GameManager.Instance.ListEnemigos[i].transform.position, GameManager.Instance.ListEnemigos[i].transform.rotation);
+        }
+        /*
+        P1.transform.position = GameManager.Instance.punto;
+        P2.transform.position = GameManager.Instance.punto; 
+        P3.transform.position = GameManager.Instance.punto;
+        P4.transform.position = GameManager.Instance.punto;
+        */
     }
 
     public void finJuego(){

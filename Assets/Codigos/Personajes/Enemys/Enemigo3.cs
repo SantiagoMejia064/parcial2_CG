@@ -108,6 +108,7 @@ public class Enemigo3 : MonoBehaviour
         if (resistencia <= 0)
         {
             Invoke("DestruirPersonaje", 1f);  // Espera 1 segundos antes de destruir el objeto
+            escenaManager.inicioJuego();
             //escenaManager.inicioJuego();
         }
     }
@@ -122,7 +123,7 @@ public class Enemigo3 : MonoBehaviour
             Debug.Log("Enemigo en colision: 3");
             GameManager.Instance.SetEnemigoEnColision(3);
             Debug.Log("Será que si cambia el numero " + GameManager.Instance.enemigoEnColision);
-            Destroy(collision.gameObject);
+            Destroy(GameManager.Instance.gameObject);
             escenaManager.irCombate();
         }
     }
