@@ -65,6 +65,7 @@ public class Elena : MonoBehaviour
         if (resistencia <= 0)
         {
             Invoke("DestruirPersonaje", 1f);  // Espera 1 segundos antes de destruir el objeto
+            GameManager.Instance.elenaLife = false;
             //escenaManager.inicioJuego();
         }
     }
