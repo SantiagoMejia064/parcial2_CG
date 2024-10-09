@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public List<GameObject> ListEnemigos = new List<GameObject>();
 
     [SerializeField] public int enemigoEnColision;
 
