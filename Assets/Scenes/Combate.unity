@@ -306,6 +306,7 @@ MonoBehaviour:
   enemigoTRES: {fileID: 1583769876}
   enemigoCUATRO: {fileID: 1865107508}
   currentPlayer: 0
+  currentEnemy: 0
   playerAttackButtons:
   - {fileID: 15067706}
   - {fileID: 563396290}
@@ -361,8 +362,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: -127}
-  m_SizeDelta: {x: 490.5, y: 132.15}
+  m_AnchoredPosition: {x: 112, y: -46.56}
+  m_SizeDelta: {x: 403.53, y: 77.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114885418
 MonoBehaviour:
@@ -386,18 +387,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1825985fb5b685d4ea68a2b6fffca801, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Log Panel
+  m_Text: 
 --- !u!222 &114885419
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1808,7 +1809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -433.62, y: -448}
+  m_AnchoredPosition: {x: 20, y: -350}
   m_SizeDelta: {x: 539.0842, y: 247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873331299
@@ -2071,7 +2072,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -433.62, y: -108}
+  m_AnchoredPosition: {x: -354, y: -258}
   m_SizeDelta: {x: 539.0842, y: 247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965118049
@@ -2732,7 +2733,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafd2695fddc0674c9c6b91621694a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ListEnemigos: []
+  ListEnemigos:
+  - {fileID: 708174370}
+  - {fileID: 1065057531}
+  - {fileID: 1583769869}
+  - {fileID: 1865107501}
   enemigoEnColision: 0
   punto: {x: 0, y: 0, z: 0}
   inJuego: 0
@@ -2747,6 +2752,10 @@ MonoBehaviour:
   player2: {fileID: 433652795}
   player3: {fileID: 2086604792}
   player4: {fileID: 537722189}
+  enemigo1: {fileID: 0}
+  enemigo2: {fileID: 0}
+  enemigo3: {fileID: 0}
+  enemigo4: {fileID: 0}
   combate: {fileID: 16763638}
   vidaJugador: {fileID: 339763415}
   vidaEnemigo: {fileID: 1590005310}
@@ -2805,7 +2814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -433.61996, y: -335}
+  m_AnchoredPosition: {x: -436, y: -338}
   m_SizeDelta: {x: 539.0842, y: 247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314377441
@@ -2972,7 +2981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7168817509697974596, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7192229229355104544, guid: 417885c8645aa6045adacdaec99e3e6d, type: 3}
       propertyPath: m_Size.x
@@ -3539,7 +3548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7168817509697974596, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7192229229355104544, guid: 86a668cca2f075b44b57fc8bfc4bd812, type: 3}
       propertyPath: m_Size.x
@@ -4917,7 +4926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -433.62, y: -278}
+  m_AnchoredPosition: {x: -356, y: -438}
   m_SizeDelta: {x: 539.0842, y: 247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141646258
@@ -5082,6 +5091,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8187245275504483842, guid: adac7ff5ae30c4b41ad610edaed74454, type: 3}
+      propertyPath: m_TagString
+      value: Enemigo2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5947439037890087804, guid: adac7ff5ae30c4b41ad610edaed74454, type: 3}
     m_RemovedGameObjects: []
@@ -5109,6 +5122,10 @@ PrefabInstance:
     - target: {fileID: 1417605483078959682, guid: f7b4b8d0bdd4e7448b12a0238c69e72c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417605483078959682, guid: f7b4b8d0bdd4e7448b12a0238c69e72c, type: 3}
+      propertyPath: m_TagString
+      value: Enemigo4
       objectReference: {fileID: 0}
     - target: {fileID: 2182611319946399938, guid: f7b4b8d0bdd4e7448b12a0238c69e72c, type: 3}
       propertyPath: combate
@@ -5192,6 +5209,10 @@ PrefabInstance:
     - target: {fileID: 168438799604990570, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168438799604990570, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
+      propertyPath: m_TagString
+      value: Enemigo1
       objectReference: {fileID: 0}
     - target: {fileID: 3472118516275301729, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
       propertyPath: P1
@@ -5332,6 +5353,10 @@ PrefabInstance:
     - target: {fileID: 3497373933250530777, guid: 9e9509dcd33998b4d887b289affc7969, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497373933250530777, guid: 9e9509dcd33998b4d887b289affc7969, type: 3}
+      propertyPath: m_TagString
+      value: Enemigo3
       objectReference: {fileID: 0}
     - target: {fileID: 7944631742053394567, guid: 9e9509dcd33998b4d887b289affc7969, type: 3}
       propertyPath: combate

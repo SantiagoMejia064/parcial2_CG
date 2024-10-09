@@ -31,6 +31,7 @@ public class CombateManager : MonoBehaviour
 
 
     public int currentPlayer;
+    public int currentEnemy;
 
 
 
@@ -56,42 +57,29 @@ public class CombateManager : MonoBehaviour
         }
 
         //GameManager.Instance.vidaJugador.text = "Vida Jugador: " + Player1Attack.resistencia;  // Actualiza el texto inicial de vida del jugador
-
-    // Dependiendo del enemigo actual en colisión, puedes inicializar su vida de esta manera:
-        switch (GameManager.Instance.enemigoEnColision)
-        {
-            case 1:
-                GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + enemigoUNO.resistencia;
-                break;
-            case 2:
-                GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + enemigoDOS.resistencia;
-                break;
-            case 3:
-                GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + enemigoTRES.resistencia;
-                break;
-            case 4:
-                GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + enemigoCUATRO.resistencia;
-                break;
-        }
     }
 
 
     void Awake(){
         if(SceneManager.GetActiveScene().name == "Combate"){
-            if(GameManager.Instance != null)
+            if(!GameManager.Instance)
             {
                 switch(GameManager.Instance.enemigoEnColision){
                 case 1:
                     enemigo1.SetActive(true);
+                    currentEnemy = 1;
                     break;
                 case 2:
                     enemigo2.SetActive(true);
+                    currentEnemy = 2;
                     break;
                 case 3:
                     enemigo3.SetActive(true);
+                    currentEnemy = 3;
                     break;
                 case 4:
                     enemigo4.SetActive(true);
+                    currentEnemy = 4;
                     break;
                 default:
                     Debug.LogWarning("indice de enemigo invalido");
@@ -199,7 +187,6 @@ public class CombateManager : MonoBehaviour
     {
         if (enemyAttacking)
             {
-                
                 playerAttacking = false;
                 enemyAttacking = true;
 

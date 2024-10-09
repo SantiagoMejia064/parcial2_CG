@@ -82,6 +82,8 @@ public class Player1Attack : MonoBehaviour
     }
 
     public void atacar(){
+
+        Debug.Log("Atacando al enemigo en colisión: " + GameManager.Instance.enemigoEnColision);
         switch(GameManager.Instance.enemigoEnColision){
                 case 1:
                     enemigo1.GetDamage(valorAtaque);
@@ -97,6 +99,7 @@ public class Player1Attack : MonoBehaviour
                     break;
                 default:
                     Debug.LogWarning("indice de enemigo invalido");
+                    Debug.Log(GameManager.Instance.enemigoEnColision);
                     break;
             }
 
@@ -134,21 +137,35 @@ public class Player1Attack : MonoBehaviour
 
     public void TiradaAtaque2()
     {
+        combate.ActivatePlayerAttackButtons(false);
         if (TiradaDeExito())
         {
             int d6A = Random.Range(0, 6);
             int d6B = Random.Range(0, 6);
 
             valorAtaque = d6A + d6B;
-            Debug.Log("El personaje hizo el siguiente daño: " + d6A + "+" + d6B + " = " + valorAtaque);
+
+            GameManager.Instance.SetRetroalimentación("El personaje hizo el siguiente daño: " + valorAtaque);
             anim.SetTrigger("Ataque2");
+            combate.enemyAttacking = true;
+            StartCoroutine(combate.eleccionAtaqueEnemigo());
         }
+        else
+        {
+            GameManager.Instance.SetRetroalimentación("El ataque del jugador falló");
+            combate.enemyAttacking = true;
+
+            
+            StartCoroutine(combate.eleccionAtaqueEnemigo());
+        // Si el ataque falla, también quieres que los botones se desactiven y pase al turno del enemigo
+        }
+    
     }
 
     public void GetDamage(int dmg)
     {
         resistencia -= dmg;  // Resta la cantidad de da�o
-        GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + resistencia;  // Actualiza el texto de vida del enemigo
+        GameManager.Instance.vidaJugador.text = "Vida Jugador: " + resistencia;  // Actualiza el texto de vida del enemigo
         Dead();
     }
 

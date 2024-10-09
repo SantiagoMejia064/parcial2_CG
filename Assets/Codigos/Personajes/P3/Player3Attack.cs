@@ -11,10 +11,13 @@ public class Player3Attack : MonoBehaviour
     public Enemigo2 enemigo2;
     public Enemigo3 enemigo3;
     public Enemigo4 enemigo4;
+    private int valorAtaque;
 
     [Header("Estadisticas")]
     public int fuerza;
     public int resistencia;
+
+    private Animator anim;
 
     public bool TiradaDeExito()
     {
@@ -55,16 +58,10 @@ public class Player3Attack : MonoBehaviour
         }
     }
 
-    public void TiradaAtaque()
-    {
-        if (TiradaDeExito())
-        {
-            int d10 = Random.Range(0, 10);
-            int d6 = Random.Range(0, 6);
+    public void atacar(){
 
-            int valorAtaque = d10 + d6;
-            Debug.Log("Tirada de ataque de personaje 3: " + d10 + "+" + d6 + " = " + valorAtaque);
-            switch(GameManager.Instance.enemigoEnColision){
+        Debug.Log("Atacando al enemigo en colisión: " + GameManager.Instance.enemigoEnColision);
+        switch(GameManager.Instance.enemigoEnColision){
                 case 1:
                     enemigo1.GetDamage(valorAtaque);
                     break;
@@ -79,12 +76,38 @@ public class Player3Attack : MonoBehaviour
                     break;
                 default:
                     Debug.LogWarning("indice de enemigo invalido");
+                    Debug.Log(GameManager.Instance.enemigoEnColision);
                     break;
             }
 
             combate.playerAttacking = false;
-            combate.enemyAttacking = true;  
+            combate.enemyAttacking = true;   
+    }
+
+    public void TiradaAtaque()
+    {
+        combate.ActivatePlayerAttackButtons(false);
+        if (TiradaDeExito())
+        {
+            int d10 = Random.Range(0, 10);
+            int d6 = Random.Range(0, 6);
+
+            int valorAtaque = d10 + d6;
+            GameManager.Instance.SetRetroalimentación("El personaje hizo el siguiente daño: " + valorAtaque);
+            anim.SetTrigger("Ataque1");
+            combate.enemyAttacking = true;
+            StartCoroutine(combate.eleccionAtaqueEnemigo());
         }
+        else
+        {
+            GameManager.Instance.SetRetroalimentación("El ataque del jugador falló");
+            combate.enemyAttacking = true;
+
+            
+            StartCoroutine(combate.eleccionAtaqueEnemigo());
+        // Si el ataque falla, también quieres que los botones se desactiven y pase al turno del enemigo
+        }
+
     }
 
     public void GetDamage(int dmg)

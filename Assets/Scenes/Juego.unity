@@ -717,6 +717,7 @@ MonoBehaviour:
   - {fileID: 168438799604990570, guid: eab7edf614e0bb6489bb2a8ec1f1bd1f, type: 3}
   - {fileID: 3497373933250530777, guid: 9e9509dcd33998b4d887b289affc7969, type: 3}
   - {fileID: 1417605483078959682, guid: f7b4b8d0bdd4e7448b12a0238c69e72c, type: 3}
+  primerVez: 1
 --- !u!4 &360203646
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,9 +1073,11 @@ MonoBehaviour:
   enemigoDOS: {fileID: 0}
   enemigoTRES: {fileID: 0}
   enemigoCUATRO: {fileID: 0}
+  currentPlayer: 0
   playerAttackButtons: []
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 782218985}
   panelSeleccionPersonajes: {fileID: 0}
+  panelCombate: {fileID: 0}
 --- !u!4 &702119436
 Transform:
   m_ObjectHideFlags: 0
@@ -1119,15 +1122,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafd2695fddc0674c9c6b91621694a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ListEnemigos: []
   enemigoEnColision: 0
   punto: {x: 0, y: 0, z: 0}
   inJuego: 0
   inBosque: 0
   inBoss: 0
+  elenaLife: 1
   cantLlaveMorada: 0
   cantGemas: 0
   cantEspadas: 0
   cantPociones: 0
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
+  combate: {fileID: 702119435}
+  vidaJugador: {fileID: 0}
+  vidaEnemigo: {fileID: 0}
   textoCombate: {fileID: 1403417537}
   pocion: {fileID: 0}
   gema: {fileID: 0}
@@ -2165,6 +2177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21dc830570193a448e702feecbaea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  P1: {fileID: 0}
+  P2: {fileID: 0}
+  P3: {fileID: 0}
+  P4: {fileID: 0}
   tiempoEsc: 5
   aparecerEnemigo: 1
   time: 0

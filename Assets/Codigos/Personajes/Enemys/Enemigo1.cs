@@ -115,7 +115,9 @@ public class Enemigo1 : MonoBehaviour
 
     public void GetDamage(int dmg)
     {
-        resistencia -= dmg;  // Resta la cantidad de da?o
+        resistencia -= dmg; 
+        GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + resistencia;
+
         Dead();
     }
 

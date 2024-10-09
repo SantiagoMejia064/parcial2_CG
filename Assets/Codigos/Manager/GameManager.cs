@@ -28,6 +28,12 @@ public class GameManager : MonoBehaviour
     public Player2Attack player2;
     public Player3Attack player3;
     public Player4Attack player4;
+
+    public Enemigo1 enemigo1;
+    public Enemigo2 enemigo2;
+    public Enemigo3 enemigo3;
+    public Enemigo4 enemigo4;
+
     public CombateManager combate;
 
     public Text vidaJugador; 
@@ -57,6 +63,7 @@ public class GameManager : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Combate")
         {
             combate = GameObject.Find("CombateManager").GetComponent<CombateManager>();   
+            
         }
         
     }
@@ -87,6 +94,7 @@ public class GameManager : MonoBehaviour
                     vidaJugador.text = "Vida: " + player4.resistencia;
                     break;
             }
+
         }
     }
 
