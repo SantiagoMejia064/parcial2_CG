@@ -54,16 +54,19 @@ public class GameManager : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Town" || SceneManager.GetActiveScene().name == "Juego" || SceneManager.GetActiveScene().name == "Boss"){
             pocion = GameObject.Find("txt_pocion").GetComponent<Text>();
             gema = GameObject.Find("txt_gema").GetComponent<Text>();
-            espada = GameObject.Find("txt_espada").GetComponent<Text>();
-            textoCombate = GameObject.Find("principalTxt").GetComponent<Text>();
-            vidaJugador = GameObject.Find("vidaJugador").GetComponent<Text>();  
-            vidaEnemigo = GameObject.Find("vidaEnemigo").GetComponent<Text>();
+            espada = GameObject.Find("txt_espada").GetComponent<Text>(); 
+            textoCombate = GameObject.Find("PanelPrincipal").GetComponent<Text>();
+            vidaJugador = GameObject.Find("VidaPanelPlayer").GetComponent<Text>();  
+            vidaEnemigo = GameObject.Find("VidaPanelEnemy").GetComponent<Text>();
+            
         }
 
         if(SceneManager.GetActiveScene().name == "Combate")
         {
             combate = GameObject.Find("CombateManager").GetComponent<CombateManager>();   
-            
+            //textoCombate = GameObject.Find("PanelPrincipal").GetComponent<Text>();
+            //vidaJugador = GameObject.Find("VidaPanelPlayer").GetComponent<Text>();  
+            //vidaEnemigo = GameObject.Find("VidaPanelEnemy").GetComponent<Text>();
         }
         
     }

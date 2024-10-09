@@ -19,7 +19,10 @@ public class EnemyPos : MonoBehaviour
                 if (null != enemyPrefab[seleccionEnemigos])
                 {   
                     GameObject enemigoX = Instantiate(enemyPrefab[seleccionEnemigos], enemyPos[i].transform.position, enemyPos[i].transform.rotation);
-                    GameManager.Instance.ListEnemigos.Add(enemigoX);
+                    if(GameManager.Instance != null){
+                        GameManager.Instance.ListEnemigos.Add(enemigoX);
+                    }
+                    //GameManager.Instance.ListEnemigos.Add(enemigoX);
                 }
             }
             primerVez = false;

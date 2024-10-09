@@ -232,10 +232,7 @@ public class CombateManager : MonoBehaviour
             else
             {
                 Debug.Log("No es el turno del enemy");
-            }
-            
-             
-        
+            } 
     }
 }
 

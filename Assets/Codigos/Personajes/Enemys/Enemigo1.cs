@@ -145,5 +145,3 @@ public class Enemigo1 : MonoBehaviour
         }
     }
 }
-
-

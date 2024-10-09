@@ -165,7 +165,7 @@ public class Player1Attack : MonoBehaviour
     public void GetDamage(int dmg)
     {
         resistencia -= dmg;  // Resta la cantidad de da�o
-        GameManager.Instance.vidaJugador.text = "Vida Jugador: " + resistencia;  // Actualiza el texto de vida del enemigo
+        //GameManager.Instance.vidaJugador.text = "Vida Jugador: " + resistencia;  // Actualiza el texto de vida del enemigo
         Dead();
     }
 
