@@ -69,24 +69,24 @@ public class GameManager : MonoBehaviour
             inJuego = true;
         }
 
-        switch (combate.currentPlayer)
+        if(SceneManager.GetActiveScene().name == "Combate")
         {
-            case 1:
-                vidaJugador.text = "Vida: " + player1.resistencia;
-                break;
-            case 2:
-                vidaJugador.text = "Vida: " + player2.resistencia;
-                break;
-            case 3:
-                vidaJugador.text = "Vida: " + player3.resistencia;
-                break;
-            case 4:
-                vidaJugador.text = "Vida: " + player4.resistencia;
-                break;
+            switch (combate.currentPlayer)
+            {
+                case 1:
+                    vidaJugador.text = "Vida: " + player1.resistencia;
+                    break;
+                case 2:
+                    vidaJugador.text = "Vida: " + player2.resistencia;
+                    break;
+                case 3:
+                    vidaJugador.text = "Vida: " + player3.resistencia;
+                    break;
+                case 4:
+                    vidaJugador.text = "Vida: " + player4.resistencia;
+                    break;
+            }
         }
-
-
-
     }
 
 
