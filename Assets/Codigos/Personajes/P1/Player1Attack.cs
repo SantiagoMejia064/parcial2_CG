@@ -41,39 +41,35 @@ public class Player1Attack : MonoBehaviour
         int tirada = Random.Range(0, 10); // Genera un n�mero aleatorio entre 0 y 9 (1D10)
         if (tirada <= 3)
         {
-            Debug.Log(tirada + "Pifia en la tirada de exito, no se realiza accion.");
+            GameManager.Instance.SetRetroalimentación("Pifia en al tirada de exito");
             combate.playerAttacking = false;
             combate.enemyAttacking = true; 
             return false;
+
         }
         else
         {
-
-            Debug.Log(tirada + "Tirada exitosa, el ataque continua.");
             int tirada1 = Random.Range(0, 10);
             int tirada2 = Random.Range(0, 10);
 
             int valorAtaque = int.Parse(tirada1.ToString() + tirada2.ToString());
-            Debug.Log("Tirada de ataque de personaje 1: " + tirada1 + "+" + tirada2 + " = " + valorAtaque);
-
 
             if (valorAtaque > 70 && valorAtaque <= 99)
             {
-                Debug.Log("Pifia en el ataque de personaje 1, no se hace daño.");
+                GameManager.Instance.SetRetroalimentación("Pifia en al tirada de exito");
                 combate.playerAttacking = false;
                 combate.enemyAttacking = true; 
                 return false;
             }
             else if (valorAtaque < 70 && valorAtaque > fuerza)
             {
-                Debug.Log("El ataque de personaje 1 es exitoso, supera la fuerza del personaje.");
                 combate.playerAttacking = false;
                 combate.enemyAttacking = true; 
                 return true;
             }
             else
             {
-                Debug.Log("El ataque de personaje 1 no es exitoso, no supera la fuerza del personaje.");
+                GameManager.Instance.SetRetroalimentación("Pifia en al tirada de exito");
                 combate.playerAttacking = false;
                 combate.enemyAttacking = true; 
                 return false;
@@ -114,14 +110,14 @@ public class Player1Attack : MonoBehaviour
 
             valorAtaque = d10 + d4;
             
-            GameManager.Instance.SetRetroalimentación("El personaje hizo el siguiente daño: " + valorAtaque);
+            Debug.Log("El personaje hizo el siguiente daño: " + valorAtaque);
             anim.SetTrigger("Ataque1");
             combate.enemyAttacking = true;
             StartCoroutine(combate.eleccionAtaqueEnemigo());
         }
         else
         {
-            GameManager.Instance.SetRetroalimentación("El ataque del jugador falló");
+            GameManager.Instance.SetRetroalimentación("Pifia en al tirada de exito");
             combate.enemyAttacking = true;
 
             
@@ -148,7 +144,6 @@ public class Player1Attack : MonoBehaviour
     public void GetDamage(int dmg)
     {
         resistencia -= dmg;  // Resta la cantidad de da�o
-        GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + resistencia;  // Actualiza el texto de vida del enemigo
         Dead();
     }
 
