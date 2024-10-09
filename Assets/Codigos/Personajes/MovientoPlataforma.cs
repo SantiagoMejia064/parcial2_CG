@@ -27,7 +27,11 @@ public class MovimientoPlataforma : MonoBehaviour
     
     public bool isCrouching = false;
 
-    [Header("Animaci�n")]
+    public AudioSource salto;
+    public AudioSource coin;
+    public AudioSource Caminar;
+
+    [Header("Animacion")]
     public Animator anim;
 
     //public AudioSource salto;
