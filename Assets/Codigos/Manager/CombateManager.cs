@@ -29,12 +29,19 @@ public class CombateManager : MonoBehaviour
     public Enemigo3 enemigoTRES;
     public Enemigo4 enemigoCUATRO;
 
+<<<<<<< Updated upstream
     public Lupus lupus;
     public Elena helena;
+=======
+    public int currentPlayer;
+
+
+>>>>>>> Stashed changes
 
     public Button[] playerAttackButtons;  // Botones de ataque del jugador
     public GameManager gameManager;
     public GameObject panelSeleccionPersonajes;
+    public GameObject panelCombate;
 
 
     
@@ -52,6 +59,25 @@ public class CombateManager : MonoBehaviour
             playerAttacking = false;
             enemyAttacking = false;
             Debug.Log("No es la escena para que combatan");
+        }
+
+        //GameManager.Instance.vidaJugador.text = "Vida Jugador: " + Player1Attack.resistencia;  // Actualiza el texto inicial de vida del jugador
+
+    // Dependiendo del enemigo actual en colisión, puedes inicializar su vida de esta manera:
+        switch (GameManager.Instance.enemigoEnColision)
+        {
+            case 1:
+                GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + enemigoUNO.resistencia;
+                break;
+            case 2:
+                GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + enemigoDOS.resistencia;
+                break;
+            case 3:
+                GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + enemigoTRES.resistencia;
+                break;
+            case 4:
+                GameManager.Instance.vidaEnemigo.text = "Vida Enemigo: " + enemigoCUATRO.resistencia;
+                break;
         }
     }
 
@@ -108,20 +134,24 @@ public class CombateManager : MonoBehaviour
                 personaje1.SetActive(true);
                 P1Attack1.SetActive(true);
                 P1Attack2.SetActive(true);
+                currentPlayer = 1;
                 break;
             case 2:
                 personaje2.SetActive(true);
                 P2Attack1.SetActive(true);
                 P2Attack2.SetActive(true);
                 P2Attack3.SetActive(true);
+                currentPlayer = 2;
                 break;
             case 3:
                 personaje3.SetActive(true);
                 P3Attack1.SetActive(true);
+                currentPlayer = 3;
                 break;
             case 4:
                 personaje4.SetActive(true);
                 P4Attack1.SetActive(true);
+                currentPlayer = 4;
                 break;
             default:
                 Debug.LogWarning("indice de personaje invalido");
@@ -130,6 +160,7 @@ public class CombateManager : MonoBehaviour
 
         // Desactivar el panel de selecci�n despu�s de elegir un personaje
         panelSeleccionPersonajes.SetActive(false);
+        panelCombate.SetActive(true);
     }
 
     // Activar o desactivar los botones de ataque del jugador
