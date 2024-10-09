@@ -152,11 +152,6 @@ public class MovimientoPlataforma : MonoBehaviour
             transform.parent = collision.transform;
         }
 
-
-        if (collision.gameObject.tag == "Enemigo1" || collision.gameObject.tag == "Enemigo2" || collision.gameObject.tag == "Enemigo3" || collision.gameObject.tag == "Enemigo4")
-        {
-            GameManager.Instance.punto = collision.transform.position;
-        }
         /*
 
         jugadre.transform.position = EscenaManager.instance.punto;

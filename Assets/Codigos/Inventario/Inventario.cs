@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Inventario : MonoBehaviour
 {
-
-
     public bool inventoryEnabled;
 
     public GameObject inventory;
 
-    
+    public Text gema;
+    public Text espada;
+    public Text pocion;
+
    // private int allSlots;
 
    // private int enabledSlots;
@@ -41,19 +45,31 @@ public class Inventario : MonoBehaviour
 
     private void Update()
     {
+        
+        gema.text = GameManager.Instance.cantGemas.ToString();
+        espada.text = GameManager.Instance.cantEspadas.ToString();
+        pocion.text = GameManager.Instance.cantPociones.ToString();
+        
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             inventoryEnabled = !inventoryEnabled;
+
+            if (inventoryEnabled)
+            {
+                GameManager.Instance.invtDown = true;
+                inventory.SetActive(true);
+            }
+            else
+            {
+                GameManager.Instance.invtDown = false;
+                inventory.SetActive(false);
+            }
+
         }
 
-        if (inventoryEnabled)
-        {
-            inventory.SetActive(true);
-        }
-        else
-        {
-            inventory.SetActive(false);
-        }
+        
+
     }
 
     /*

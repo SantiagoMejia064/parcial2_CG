@@ -399,13 +399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09ca1a412d9d4e4cb47773370c09dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  ID: 0
-  type: 
-  descripcion: 
-  empty: 0
-  icon: {fileID: 0}
-  slotIconGameObject: {fileID: 0}
 --- !u!114 &8036723102599105517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,13 +533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09ca1a412d9d4e4cb47773370c09dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  ID: 0
-  type: 
-  descripcion: 
-  empty: 0
-  icon: {fileID: 0}
-  slotIconGameObject: {fileID: 0}
 --- !u!114 &5104088034560753749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,13 +1023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09ca1a412d9d4e4cb47773370c09dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  ID: 0
-  type: 
-  descripcion: 
-  empty: 0
-  icon: {fileID: 0}
-  slotIconGameObject: {fileID: 0}
 --- !u!114 &2871336111757690233
 MonoBehaviour:
   m_ObjectHideFlags: 0

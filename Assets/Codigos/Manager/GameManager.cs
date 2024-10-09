@@ -8,15 +8,15 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public List<GameObject> ListEnemigos = new List<GameObject>();
+
 
     [SerializeField] public int enemigoEnColision;
 
-    public Vector3 punto;
     public bool inJuego = false;
     public bool inBosque = false;
     public bool inBoss = false;
     public bool elenaLife = true;
+    public bool invtDown = false;
 
     public int cantLlaveMorada = 0;
 
@@ -61,9 +61,9 @@ public class GameManager : MonoBehaviour
             pocion = GameObject.Find("txt_pocion").GetComponent<Text>();
             gema = GameObject.Find("txt_gema").GetComponent<Text>();
             espada = GameObject.Find("txt_espada").GetComponent<Text>(); 
-            textoCombate = GameObject.Find("PanelPrincipal").GetComponent<Text>();
-            vidaJugador = GameObject.Find("VidaPanelPlayer").GetComponent<Text>();  
-            vidaEnemigo = GameObject.Find("VidaPanelEnemy").GetComponent<Text>();
+            //textoCombate = GameObject.Find("PanelPrincipal").GetComponent<Text>();
+            //vidaJugador = GameObject.Find("VidaPanelPlayer").GetComponent<Text>();  
+            //vidaEnemigo = GameObject.Find("VidaPanelEnemy").GetComponent<Text>();
             
         }
 
